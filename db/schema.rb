@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140407042746) do
+ActiveRecord::Schema.define(version: 20140407043019) do
 
   create_table "comments", force: true do |t|
     t.integer  "stars"
@@ -54,6 +54,13 @@ ActiveRecord::Schema.define(version: 20140407042746) do
   add_index "games", ["game_review_id"], name: "index_games_on_game_review_id"
   add_index "games", ["geme_genre_id"], name: "index_games_on_geme_genre_id"
   add_index "games", ["geme_info_id"], name: "index_games_on_geme_info_id"
+
+  create_table "genres", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "purchases", force: true do |t|
     t.date     "purchase_date"
