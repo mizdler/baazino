@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140407132347) do
+ActiveRecord::Schema.define(version: 20140407133103) do
 
   create_table "comments", force: true do |t|
     t.integer  "stars"
@@ -35,6 +35,15 @@ ActiveRecord::Schema.define(version: 20140407132347) do
 
   add_index "game_genres", ["game_id"], name: "index_game_genres_on_game_id"
   add_index "game_genres", ["genre_id"], name: "index_game_genres_on_genre_id"
+
+  create_table "game_infos", force: true do |t|
+    t.integer  "platform_id"
+    t.string   "version_support"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "game_infos", ["platform_id"], name: "index_game_infos_on_platform_id"
 
   create_table "games", force: true do |t|
     t.string   "game_name"
@@ -82,6 +91,16 @@ ActiveRecord::Schema.define(version: 20140407132347) do
   add_index "purchases", ["game_id"], name: "index_purchases_on_game_id"
   add_index "purchases", ["gate_id"], name: "index_purchases_on_gate_id"
   add_index "purchases", ["user_id"], name: "index_purchases_on_user_id"
+
+  create_table "reviews", force: true do |t|
+    t.string   "title"
+    t.string   "content"
+    t.integer  "game_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "reviews", ["game_id"], name: "index_reviews_on_game_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
