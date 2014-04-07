@@ -1,4 +1,6 @@
 Baazino::Application.routes.draw do
+  resources :comments
+
   resources :purchases
 
   devise_for :users
