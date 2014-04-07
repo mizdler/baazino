@@ -2,6 +2,6 @@
 
 baazino is a mobile game store this github project is website part of baazino project.
 
-ruby version: 1.9.3
-rails version: 4.0.2
-temporary using sqlite as database
+- ruby version: 1.9.3
+- rails version: 4.0.2
+- temporary using sqlite as database
