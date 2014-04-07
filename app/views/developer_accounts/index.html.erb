@@ -1,0 +1,31 @@
+<h1>Listing developer_accounts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Account balance</th>
+      <th>Account number</th>
+      <th>Bank</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @developer_accounts.each do |developer_account| %>
+      <tr>
+        <td><%= developer_account.account_balance %></td>
+        <td><%= developer_account.account_number %></td>
+        <td><%= developer_account.bank %></td>
+        <td><%= link_to 'Show', developer_account %></td>
+        <td><%= link_to 'Edit', edit_developer_account_path(developer_account) %></td>
+        <td><%= link_to 'Destroy', developer_account, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Developer account', new_developer_account_path %>

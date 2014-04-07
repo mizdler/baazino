@@ -1,4 +1,6 @@
 Baazino::Application.routes.draw do
+  resources :developer_accounts
+
   resources :developers
 
   resources :reviews
