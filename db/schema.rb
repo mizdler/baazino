@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140407133103) do
+ActiveRecord::Schema.define(version: 20140407151640) do
+
+  create_table "banks", force: true do |t|
+    t.string   "bank_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "comments", force: true do |t|
     t.integer  "stars"
@@ -25,6 +31,26 @@ ActiveRecord::Schema.define(version: 20140407133103) do
 
   add_index "comments", ["game_id"], name: "index_comments_on_game_id"
   add_index "comments", ["user_id"], name: "index_comments_on_user_id"
+
+  create_table "developer_accounts", force: true do |t|
+    t.string   "account_balance"
+    t.string   "account_number"
+    t.integer  "bank_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "developer_accounts", ["bank_id"], name: "index_developer_accounts_on_bank_id"
+
+  create_table "developers", force: true do |t|
+    t.string   "ssid"
+    t.string   "tel"
+    t.integer  "developer_account_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "developers", ["developer_account_id"], name: "index_developers_on_developer_account_id"
 
   create_table "game_genres", force: true do |t|
     t.integer  "game_id"
