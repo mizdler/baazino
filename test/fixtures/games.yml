@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  game_name: MyString
+  version: MyString
+  create_date: 2014-04-07
+  release_date: 2014-04-07
+  description: MyString
+  developer_id: 
+  geme_info_id: 
+  geme_genre_id: 
+  game_review_id: 
+
+two:
+  game_name: MyString
+  version: MyString
+  create_date: 2014-04-07
+  release_date: 2014-04-07
+  description: MyString
+  developer_id: 
+  geme_info_id: 
+  geme_genre_id: 
+  game_review_id: 

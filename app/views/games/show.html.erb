@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Game name:</strong>
+  <%= @game.game_name %>
+</p>
+
+<p>
+  <strong>Version:</strong>
+  <%= @game.version %>
+</p>
+
+<p>
+  <strong>Create date:</strong>
+  <%= @game.create_date %>
+</p>
+
+<p>
+  <strong>Release date:</strong>
+  <%= @game.release_date %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @game.description %>
+</p>
+
+<p>
+  <strong>Developer:</strong>
+  <%= @game.developer %>
+</p>
+
+<p>
+  <strong>Geme info:</strong>
+  <%= @game.geme_info %>
+</p>
+
+<p>
+  <strong>Geme genre:</strong>
+  <%= @game.geme_genre %>
+</p>
+
+<p>
+  <strong>Game review:</strong>
+  <%= @game.game_review %>
+</p>
+
+<%= link_to 'Edit', edit_game_path(@game) %> |
+<%= link_to 'Back', games_path %>
