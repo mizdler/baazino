@@ -1,4 +1,6 @@
 Baazino::Application.routes.draw do
+  resources :game_genres
+
   resources :comments
 
   resources :purchases
