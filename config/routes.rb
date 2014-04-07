@@ -1,4 +1,6 @@
 Baazino::Application.routes.draw do
+  resources :gates
+
   resources :genres
 
   resources :game_genres

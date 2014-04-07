@@ -1,0 +1,21 @@
+<%= form_for(@gate) do |f| %>
+  <% if @gate.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@gate.errors.count, "error") %> prohibited this gate from being saved:</h2>
+
+      <ul>
+      <% @gate.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :bank_name %><br>
+    <%= f.text_field :bank_name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
