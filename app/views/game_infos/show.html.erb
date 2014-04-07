@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Platform:</strong>
+  <%= @game_info.platform %>
+</p>
+
+<p>
+  <strong>Version support:</strong>
+  <%= @game_info.version_support %>
+</p>
+
+<%= link_to 'Edit', edit_game_info_path(@game_info) %> |
+<%= link_to 'Back', game_infos_path %>
