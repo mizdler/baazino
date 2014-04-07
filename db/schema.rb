@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140407033210) do
+ActiveRecord::Schema.define(version: 20140407035947) do
 
   create_table "games", force: true do |t|
     t.string   "game_name"
@@ -31,6 +31,21 @@ ActiveRecord::Schema.define(version: 20140407033210) do
   add_index "games", ["game_review_id"], name: "index_games_on_game_review_id"
   add_index "games", ["geme_genre_id"], name: "index_games_on_geme_genre_id"
   add_index "games", ["geme_info_id"], name: "index_games_on_geme_info_id"
+
+  create_table "purchases", force: true do |t|
+    t.date     "purchase_date"
+    t.string   "cart_number"
+    t.integer  "price"
+    t.integer  "user_id"
+    t.integer  "game_id"
+    t.integer  "gate_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "purchases", ["game_id"], name: "index_purchases_on_game_id"
+  add_index "purchases", ["gate_id"], name: "index_purchases_on_gate_id"
+  add_index "purchases", ["user_id"], name: "index_purchases_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

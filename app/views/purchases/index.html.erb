@@ -1,0 +1,37 @@
+<h1>Listing purchases</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Purchase date</th>
+      <th>Cart number</th>
+      <th>Price</th>
+      <th>User</th>
+      <th>Game</th>
+      <th>Gate</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @purchases.each do |purchase| %>
+      <tr>
+        <td><%= purchase.purchase_date %></td>
+        <td><%= purchase.cart_number %></td>
+        <td><%= purchase.price %></td>
+        <td><%= purchase.user %></td>
+        <td><%= purchase.game %></td>
+        <td><%= purchase.gate %></td>
+        <td><%= link_to 'Show', purchase %></td>
+        <td><%= link_to 'Edit', edit_purchase_path(purchase) %></td>
+        <td><%= link_to 'Destroy', purchase, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Purchase', new_purchase_path %>
