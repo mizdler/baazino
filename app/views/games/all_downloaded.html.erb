@@ -1,15 +1,25 @@
-   <div class="container">
-		<div class="title">
-			<h2>بیشترین دانلود</h2>
-			<div class="more"><a href="/dowloadedgames">بیشتر</a></div>
+<div class="container">
+	<div class="title">
+		<h2>بیشترین دانلود</h2>
+	</div>
+	<% all_new.each do |game| %>
+	<%= link_to game, :class => "appLink" do %>
+	<article class="app">
+		<div class= "coverPhoto">
+			<% if game.cover_photo %>
+			<%= image_tag game.cover_photo.url %>
+			<% end%>
 		</div>
-    <% all_downloads.each do |game| %>
-
-		<article class="app">
-			<figure><a href=""><img src="tank.webp" alt="" class="thumb"></a></figure>
-			<h2><%= link_to game.game_name, game %></h2>
-			<div class="cat"><a href=""><%= game.description %></div>
-			<div class="price"><% if game.price!=0 %><%= game.price %> تومان<%else%>رایگان<%end%> </div>
-		</article>
-    <% end %>
-    </div>
+		<div class="gameName">
+			<%= game.game_name %>
+		</div>
+		<div class="cat">
+			<%= game.description %>
+		</div>
+		<div class="priceMain">
+			<% if game.price!=0 %><%= game.price %> تومان<%else%>رایگان<%end%>
+		</div>
+	</article>
+	<% end %>
+	<% end %>
+</div>

@@ -1,8 +1,8 @@
-
+<%= stylesheet_link_tag    "comment", media: "all", "data-turbolinks-track" => true %>
 <div class = "col-lg-12" style="margin-top:20px;">
-  <div class="detail col-lg-12">
+  	<div class="detail col-lg-12">
         <div class="download col-lg-9" >
-          <div class="clo-lg-3"></div>
+          	<div class="clo-lg-3"></div>
           	<div class="clo-lg-6">
             
 	            <div id = "gmn">
@@ -45,34 +45,45 @@
 				<%= image_tag @game.cover_photo.url , class:"image" %>
 			<% end%>
         </div>
-  		</div>
 
-	  	
-		<div class="comments">
-	  		<h2>Comments</h2>
-				<% @game.comments.each do |comment| %>
-				    <p>
-				        <strong>Commenter:</strong>
-				    </p>
-				    <p>
-				        <strong>Comment:</strong>
-				        <%= comment.body %>
-				    </p>
-				<% end %>
+	</div>
+</div>
 
-				<h2>Add a comment:</h2>
-				<%= form_for([@game, @game.comments.build]) do |f| %>
-				    <p>
-				        <%= f.label :commenter %><br />
-				    </p>
-				    <p>
-				        <%= f.label :body %><br />
-				        <%= f.text_area :body %>
-				    </p>
-				    <p>
-				        <%= f.submit %>
-				    </p>
-				<% end %>
+<div id ="comm" class="col-lg-12">
+		<div class="col-lg-12">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="widget">
+						<div class="widget-header">
+							<i class="icon-file"></i>
+							<h3>Comments</h3>
+						</div>
+						<div class="widget-content">
+							<div class="timeline-messages">
+								<% @game.comments.each do |comment| %>
+									<div  class="msg-time-chat">
+										<div href="#" class="message-img"><img class="avatar" src="images/avatar.jpg" alt=""></div>
+										<div class="message-body msg-in">
+											<span class="arrow"></span>
+											<div class="text">
+												<p class="attribution">reza sadeghi at 1:55pm, 13th April 2013</p>
+												<p style="font-size:25px;"><%= comment.body %></p>
+											</div>
+										</div>
+									</div>
+								<% end %>
+							</div>
+							<%= form_for([@game, @game.comments.build]) do |f|  %>
+							<div  class="chat-form">
+								<div class="input-cont">
+									<%=f.text_area :body, :html=>{ placeholder:"Type a comment here..."}%>
+								</div>
+								<%=f.submit "send" , class:"btn-cont btn btn-warning"%>
+							</div>
+							<% end %>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
-  	</div>
-<div>
+	</div>
