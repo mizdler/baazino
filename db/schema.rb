@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140407151640) do
+ActiveRecord::Schema.define(version: 20140414163340) do
 
   create_table "banks", force: true do |t|
     t.string   "bank_name"
@@ -78,17 +78,15 @@ ActiveRecord::Schema.define(version: 20140407151640) do
     t.date     "release_date"
     t.string   "description"
     t.integer  "developer_id"
-    t.integer  "geme_info_id"
-    t.integer  "geme_genre_id"
-    t.integer  "game_review_id"
+    t.integer  "game_info_id"
+    t.integer  "review_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "games", ["developer_id"], name: "index_games_on_developer_id"
-  add_index "games", ["game_review_id"], name: "index_games_on_game_review_id"
-  add_index "games", ["geme_genre_id"], name: "index_games_on_geme_genre_id"
-  add_index "games", ["geme_info_id"], name: "index_games_on_geme_info_id"
+  add_index "games", ["game_info_id"], name: "index_games_on_game_info_id"
+  add_index "games", ["review_id"], name: "index_games_on_review_id"
 
   create_table "gates", force: true do |t|
     t.string   "bank_name"
@@ -99,6 +97,12 @@ ActiveRecord::Schema.define(version: 20140407151640) do
   create_table "genres", force: true do |t|
     t.string   "name"
     t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "platforms", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

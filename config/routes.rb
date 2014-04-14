@@ -1,4 +1,6 @@
 Baazino::Application.routes.draw do
+  resources :platforms
+
   resources :banks
 
   resources :developer_accounts

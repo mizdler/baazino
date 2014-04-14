@@ -14,7 +14,7 @@
   <tbody>
     <% @game_infos.each do |game_info| %>
       <tr>
-        <td><%= game_info.platform %></td>
+        <td><%= game_info.platform.name %></td>
         <td><%= game_info.version_support %></td>
         <td><%= link_to 'Show', game_info %></td>
         <td><%= link_to 'Edit', edit_game_info_path(game_info) %></td>
