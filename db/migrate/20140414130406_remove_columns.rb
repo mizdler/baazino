@@ -4,6 +4,6 @@ class RemoveColumns < ActiveRecord::Migration
   end
 
   def self.down
-    add_comumn :games, :game_genre_id, :string
+    add_column :games, :game_genre_id, :string
   end
 end

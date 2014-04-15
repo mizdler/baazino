@@ -7,7 +7,7 @@
 			<figure><a href=""><img src="tank.webp" alt="" class="thumb"></a></figure>
 			<h2><%= link_to game.game_name, game %></h2>
 			<div class="cat"><a href=""><%= game.description %></div>
-			<div class="price">500 تومان</div>
+			<div class="price"><%= game.price %> تومان</div>
 			<td><%= link_to 'Edit', edit_game_path(game) %></td>
 		</article>
     <% end %>
