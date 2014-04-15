@@ -69,14 +69,14 @@ header {
 	margin: 25px 40px;
 }
 
-.more a {
-	color: #fff;
+.more a, .buy {
+	color: #fff !important;
 	background-color: rgb(179, 200, 51);
 	padding: 4px 12px;
 	transition: all 0.2s ease 0s;
 }
 
-.more a:hover {
+.more a:hover, .buy:hover {
 	box-shadow: 0px -2px 0px rgba(0, 0, 0, 0.27) inset;
 	text-decoration: none;
 }
@@ -116,4 +116,52 @@ header {
 
 .price {
 	float: left;
+}
+
+.app-post {
+	width: 97%;
+	padding: 10px;
+	display: table;
+}
+
+.app-post figure {
+    width: 250px;
+    float: right;
+    height: 250px;
+}
+
+.app-tt {
+	display: table;
+}
+
+.app-post h2 {
+    float: right;
+}
+
+.app-post .cat {
+    float: right;
+    margin: 27px 13px;
+    font-size: 12px;
+}
+
+.app-post .desc {
+    float: right;
+    width: 65%;
+}
+
+.app-post aside {
+    float: left;
+    width: 150px;
+    text-align: center;
+}
+
+.app-post .price {
+	float: none;
+}
+
+.app-post .buy {
+    border: none;
+	cursor: pointer;
+    width: 78%;
+    font-size: 16px;
 }
