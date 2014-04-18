@@ -25,6 +25,7 @@ class DevelopersController < ApplicationController
   # POST /developers.json
   def create
     @developer = Developer.new(developer_params)
+    @developer.user = current_user
 
     respond_to do |format|
       if @developer.save
@@ -40,6 +41,7 @@ class DevelopersController < ApplicationController
   # PATCH/PUT /developers/1
   # PATCH/PUT /developers/1.json
   def update
+    @developer.user = current_user
     respond_to do |format|
       if @developer.update(developer_params)
         format.html { redirect_to @developer, notice: 'Developer was successfully updated.' }

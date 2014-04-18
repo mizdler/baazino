@@ -1,6 +1,5 @@
 class GamesController < ApplicationController
   before_action :set_game, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
 
   # GET /games
   # GET /games.json
@@ -20,6 +19,10 @@ class GamesController < ApplicationController
 
   # GET /games/1/edit
   def edit
+      if !user_signed_in?
+        flash.now[:alert] = "Your book was not found"
+        redirect_to action: :index
+      end
   end
 
   # POST /games

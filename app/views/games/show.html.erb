@@ -51,8 +51,8 @@
 			<section class="app-tt">
 				<h2><%= @game.game_name %></h2>
 				<h4>تاریخ: <%= @game.release_date %></h4>
-				<h4>تاریخ: <%= @game.developer.ssid %></h4>
-				<div class="cat more"><a href="">ورزشی</a></div>
+				<h4>برنامه نویس: <%= @game.developer.user.email %></h4>
+				<div class="cat more"><%= @game.genre%></div>
 			</section>
 			<div class="desc">
 				<%= @game.description %>

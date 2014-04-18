@@ -18,6 +18,8 @@
 				<li><a href="">ورزشی</a></li>
 				<li><a href="">درباره ما</a></li>
 				<li><a href="">تماس با ما</a></li>
+				<% if !user_signed_in? %><li><a href="">ورود</a></li>
+				<% else %><li><a href="devise/sessions#destroy">خروج</a></li><% end %>
 			</ul>
 		</nav>
 	</header>
