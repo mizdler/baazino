@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140415092714) do
+ActiveRecord::Schema.define(version: 20140418113308) do
 
   create_table "banks", force: true do |t|
     t.string   "bank_name"
@@ -48,9 +48,11 @@ ActiveRecord::Schema.define(version: 20140415092714) do
     t.integer  "developer_account_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   add_index "developers", ["developer_account_id"], name: "index_developers_on_developer_account_id"
+  add_index "developers", ["user_id"], name: "index_developers_on_user_id"
 
   create_table "game_genres", force: true do |t|
     t.integer  "game_id"
