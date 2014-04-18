@@ -14,13 +14,10 @@
   <div><%= f.submit "Sign in" %></div>
 <% end %>
 
-<%= render "devise/shared/links" %>
-
-
 	    <div class="container">
 	        <form class="form-signin">
 	        	<h2 class="form-signin-heading">Please Sign in</h2>
-	        	<input type="text" value="" class="form-control" placeholder="username" required autofocus>
+	        	<input type="text" class="form-control" placeholder="username" required autofocus>
 	        	<input type="password" class="form-control" placeholder="Password" required>
 	        	<label class="checkbox">
 	          		<input type="checkbox" value="remember-me"> Remember me
@@ -28,3 +25,5 @@
 	        	<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
 	        </form>
 	    </div>
+
+<%= render "devise/shared/links" %>
