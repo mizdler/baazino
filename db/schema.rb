@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140418113308) do
+ActiveRecord::Schema.define(version: 20140419133416) do
 
   create_table "banks", force: true do |t|
     t.string   "bank_name"
@@ -85,6 +85,10 @@ ActiveRecord::Schema.define(version: 20140418113308) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "price"
+    t.string   "install_file_file_name"
+    t.string   "install_file_content_type"
+    t.integer  "install_file_file_size"
+    t.datetime "install_file_updated_at"
   end
 
   add_index "games", ["developer_id"], name: "index_games_on_developer_id"

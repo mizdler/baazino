@@ -4,11 +4,7 @@
   <title>Baazino</title>
   <%= javascript_include_tag "jquery.min", "data-turbolinks-track" => true %>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
-  <script type="text/javascript">
-    	$('login').modal(show:true);
-    </script>
 </head>
 
 
@@ -26,7 +22,7 @@
 			        <%= link_to 'خروج', destroy_user_session_path %>
 			    <% else %>
 				    <a href="#" class="btn btn-lg btn-success" data-toggle="modal" data-target="#basicModal">ورود</a>
-	
+
 				    <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
 						<div class="modal-dialog">
 							<div class="modal-content">

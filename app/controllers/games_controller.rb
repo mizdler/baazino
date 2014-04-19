@@ -20,7 +20,6 @@ class GamesController < ApplicationController
   # GET /games/1/edit
   def edit
       if !user_signed_in?
-        flash.now[:alert] = "Your book was not found"
         redirect_to action: :index
       end
   end
@@ -73,6 +72,6 @@ class GamesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def game_params
-      params.require(:game).permit(:game_name, :version, :create_date, :release_date, :description, :developer_id, :game_info_id, :game_genre_id, :review_id, :price)
+      params.require(:game).permit(:game_name, :version, :create_date, :release_date, :description, :developer_id, :game_info_id, :game_genre_id, :review_id, :price, :install_file)
     end
 end
