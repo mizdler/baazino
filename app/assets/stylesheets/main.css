@@ -14,6 +14,7 @@ a:hover {
 
 body {
 	background: #e5e5e5;
+	direction: rtl;
 }
 
 header {

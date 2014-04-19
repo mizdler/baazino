@@ -20,8 +20,8 @@
 				<li><a href="">درباره ما</a></li>
 				<li><a href="">تماس با ما</a></li>
 			    <% if user_signed_in? %>
-			        <%= link_to 'خروج', destroy_user_session_path %>
-			        <%= link_to 'پروفایل', edit_user_registration_path %>
+			        <%= link_to 'خروج', destroy_user_session_path, class: "btn btn-lg btn-warning"%>
+			        <%= link_to 'پروفایل', edit_user_registration_path, class: "btn btn-lg btn-primary" %>
 			    <% else %>
 				    <a href="#" class="btn btn-lg btn-success" data-toggle="modal" data-target="#basicModal">ورود</a>
 
@@ -30,7 +30,7 @@
 							<div class="modal-content">
 								<div class="modal-header">
 									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-									<h4 class="modal-title" id="myModalLabel">SIGN IN</h4>
+									<h4 class="modal-title" id="myModalLabel">ورود به حساب</h4>
 								</div>
 								<div class="row">
 									<%= render "devise/sessions/new" %>

@@ -1,5 +1,114 @@
 <h1>New game</h1>
 
-<%= render 'form' %>
+   <div class="site-holder">
+    <!-- this is a dummy text -->
+    <!-- .navbar -->
 
-<%= link_to 'Back', games_path %>
+    <!-- /.navbar -->
+    <!-- .box-holder -->
+    <div class="box-holder">
+      <!-- .content -->
+      <div class="content">
+
+        <!-- Basic Wizard -->
+        <div class="row">
+          <div class="col-md-12">
+            <div class="panel panel-dat">
+              <div class="panel-body nopadding">
+                <!-- Smart Wizard -->
+                <div id="wizard" class="swMain">
+                  <!-- header wizard -->
+
+                  <ul>
+                    <li><a href="#step-1">
+                      <label class="stepNumber">1</label>
+                      <span class="stepDesc">
+                      Game
+                      </span>
+                      </a>
+                    </li>
+                    <li><a href="#step-2">
+                      <label class="stepNumber">2</label>
+                      <span class="stepDesc">
+                      Description
+                      </span>
+                      </a>
+                    </li>
+                    <li><a href="#step-3">
+                      <label class="stepNumber">3</label>
+                      <span class="stepDesc">
+                      Review
+                      </span>
+                      </a>
+                    </li>
+                    <li><a href="#step-4">
+                      <label class="stepNumber">4</label>
+                      <span class="stepDesc">
+                      Upload
+                      </span>
+                      </a>
+                    </li>
+                  </ul>
+
+
+
+
+                  <div id="step-1">
+                    <h2 class="StepTitle">game info</h2>
+                    <div class="panel">
+                      <div class="panel-body">
+						<%= render "games/form" %>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div id="step-2">
+                    <h2 class="StepTitle">Description</h2>
+
+                  </div>
+
+
+
+                  <div id="step-3">
+                    <h2 class="StepTitle">Terms</h2>
+                    <div class="panel">
+                      <div class="panel-heading">
+                        <h3 class="panel-title"> Make a Note </h3>
+                      </div>
+                      <div class="panel-body">
+                        <ul type="disk">
+
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div id="step-4">
+                    <h2 class="StepTitle">Finish</h2>
+                    <div class="panel">
+                      <div class="panel-heading">
+                        <h3 class="panel-title"> Thanks for your Registration! </h3>
+                        <p>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+
+    <script src="js/jquery.smartwizard.js"></script>
+    <script src="js/smartwizard-custom.js"></script>
+

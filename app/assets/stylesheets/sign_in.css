@@ -39,11 +39,6 @@ body {
   border-top-right-radius: 0;
 }
 
-.btn-green {
-  color: #fff;
-  background-color: #33cc33;
-  border-color: #357ebd;
-}
 .modal-dialog
 {
   margin: auto;
