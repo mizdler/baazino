@@ -4,4 +4,5 @@ class Game < ActiveRecord::Base
   belongs_to :review
   has_many :genre, through: :game_genre
   has_attached_file :install_file
+  validates_attachment_content_type :install_file, :content_type => /\Aimage\/.*\Z/
 end

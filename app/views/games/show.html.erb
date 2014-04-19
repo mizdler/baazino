@@ -52,7 +52,7 @@
 				<h2><%= @game.game_name %></h2>
 				<h4>تاریخ: <%= @game.release_date %></h4>
 				<h4>برنامه نویس: <%= @game.developer.user.email %></h4>
-				<div class="cat more"><%= @game.genre%></div>
+				<div class="cat more"></div>
 			</section>
 			<div class="desc">
 				<%= @game.description %>
@@ -60,7 +60,7 @@
 			<aside>
 				<div class="price">قیمت:<%= @game.price %> تومان</div>
 				<div class="version">نسخه:<%= @game.version %></div>
-				<button class="buy">خرید</button>
+				<button class="buy"><%= link_to "دانلود", @game.install_file.url(:original, false) %></button>
 			</aside>
 		</article>
 	</div>

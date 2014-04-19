@@ -47,9 +47,11 @@
     <%= f.label :price %><br>
     <%= f.text_field :price %>
   </div>
+
+  <%= f.file_field :install_file %>
+
   <div class="actions">
     <%= f.submit %>
   </div>
 
-  <%= f.file_field :install_file %>
 <% end %>
