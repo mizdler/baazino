@@ -44,3 +44,16 @@ body {
   background-color: #33cc33;
   border-color: #357ebd;
 }
+.modal-dialog
+{
+  margin: auto;
+  margin-top: 150px;
+}
+.row
+{
+  padding-bottom: 10px;
+}
+.modal-dialog
+{
+  width: 400px;
+}

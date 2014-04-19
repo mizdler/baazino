@@ -2,9 +2,13 @@
 <html>
 <head>
   <title>Baazino</title>
+  <%= javascript_include_tag "jquery.min", "data-turbolinks-track" => true %>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "default", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <script type="text/javascript">
+    	$('login').modal(show:true);
+    </script>
 </head>
 
 
@@ -21,7 +25,21 @@
 			    <% if user_signed_in? %>
 			        <%= link_to 'خروج', destroy_user_session_path %>
 			    <% else %>
-			        <%= link_to 'ورود', new_user_session_path %>
+				    <a href="#" class="btn btn-lg btn-success" data-toggle="modal" data-target="#basicModal">ورود</a>
+	
+				    <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+									<h4 class="modal-title" id="myModalLabel">SIGN IN</h4>
+								</div>
+								<div class="row">
+									<%= render "devise/sessions/new" %>
+								</div>
+							</div>
+						</div>
+					</div>
 			    <% end %>
 			</ul>
 		</nav>
