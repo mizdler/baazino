@@ -21,6 +21,7 @@
 				<li><a href="">تماس با ما</a></li>
 			    <% if user_signed_in? %>
 			        <%= link_to 'خروج', destroy_user_session_path %>
+			        <%= link_to 'پروفایل', edit_user_registration_path %>
 			    <% else %>
 				    <a href="#" class="btn btn-lg btn-success" data-toggle="modal" data-target="#basicModal">ورود</a>
 
