@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Cascade Flat , Responsive Bootstrap 3.0 Admin Template</title>
+    <title>Upload</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Loading Bootstrap -->
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -19,7 +19,7 @@
     
     <!-- /.navbar -->
     <!-- .box-holder -->
-    <div class="box-holder">
+    <div class="box-hol der">
       <!-- .content -->
       <div class="content">
         
@@ -68,7 +68,7 @@
 
                   <div id="step-1">
                     <h2 class="StepTitle">game info</h2>
-                    <div class="panel">
+                    <div class="panel panel-cascade">
                       <div class="panel-body">
 
                         <form class="form-horizontal cacade-forms" method="post" action="#" name="signup_form" id="signup_form" novalidate="novalidate">
@@ -108,21 +108,37 @@
 
                   <div id="step-2">
                     <h2 class="StepTitle">Description</h2>
-                    
+                    <form class="form-horizontal cacade-forms" method="post" action="#" name="signup_form" id="signup_form" novalidate="novalidate">
+                      <div class="panel panel-cascade">
+                        <div class="form-group">
+                          <label class="col-lg-2 col-md-3 control-label">Description</label>
+                          <div class="col-lg-10 col-md-9">
+                            <textarea class="form-control form-cascade-control" rows="3" style="margin: 0px -0.671875px 0px 0px; width: 100%; height: 100px;"></textarea>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
                   </div>
 
 
 
                   <div id="step-3">
-                    <h2 class="StepTitle">Terms</h2>
-                    <div class="panel">
-                      <div class="panel-heading">
-                        <h3 class="panel-title"> Make a Note </h3>
-                      </div>
-                      <div class="panel-body">
-                        <ul type="disk">
-                          
-                        </ul>
+                    <h2 class="StepTitle">Review</h2>
+                    <div class="panel panel-cascade">
+                      
+                      <form class="form-horizontal cacade-forms" method="post" action="#" name="signup_form" id="signup_form" novalidate="novalidate">
+                        <div class="form-group">
+                          <label class="col-lg-2 col-md-3 control-label">Review</label>
+                          <div class="col-lg-10 col-md-9">
+                            <textarea class="form-control form-cascade-control" rows="3" style="margin: 0px -0.671875px 0px 0px; width: 100%; height: 100px;"></textarea>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-lg-2 col-md-3 control-label">Game info:</label>
+                      <div class="col-lg-10 col-md-9">
+                        <input type="text" class="form-control form-cascade-control input-small" name="game_info" id="game_info">
                       </div>
                     </div>
                   </div>
@@ -130,13 +146,26 @@
 
                   <div id="step-4">
                     <h2 class="StepTitle">Finish</h2>
-                    <div class="panel">
+                    <div class="panel panel-cascade">
                       <div class="panel-heading">
-                        <h3 class="panel-title"> Thanks for your Registration! </h3>
-                        <p>
-                        </p>
+                        <h3 class="panel-title"> Upload your APK file hear </h3>
+                        <div class="panel-body nopadding" style="z-index:88;">
+                          <form id="upload" method="post" action="upload.php" enctype="multipart/form-data">
+                            <div id="drop" >
+                              Drop Here
+                              <br />
+                              <a>Browse</a>
+                              <input type="file" name="upl" multiple />
+                            </div>
+                            <ul>
+                              <!-- The file uploads will be shown here -->
+                            </ul>
+                          </form>
+                        </div>
                       </div>
                     </div>
+
+
                   </div>
 
 
@@ -151,8 +180,13 @@
     </div>
     
     <script src="js/jquery.min.js"></script>
-    
+
     <script src="js/jquery.smartwizard.js"></script>
     <script src="js/smartwizard-custom.js"></script>
+    <script  src="js/jquery.fileupload.js"></script>
+    <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+    <script  src="js/jquery.fileupload.js"></script>
+    <script src="js/jquery.knob.js"></script>
+    <script type="text/javascript" src="js/file-uploads-custom.js"></script>
   </body>
 </html>

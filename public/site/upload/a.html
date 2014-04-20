@@ -1,0 +1,136 @@
+<<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <div class="box-hol der">
+      <!-- .content -->
+      <div class="content">
+        <!-- Basic Wizard -->
+        <div class="row">
+          <div class="col-md-12">
+            <div class="panel panel-dat">
+              <div class="panel-body nopadding">
+                <!-- Smart Wizard -->
+                <div class="swMain" id="wizard">
+                  <!-- header wizard -->
+                  <ul class="anchor">
+                    <li><a href="#step-1" class="selected" isdone="1" rel="1">
+                      <label class="stepNumber">1</label>
+                      <span class="stepDesc">
+                      Game
+                      </span>
+                      </a>
+                    </li>
+                    <li><a href="#step-2" class="disabled" isdone="0" rel="2">
+                      <label class="stepNumber">2</label>
+                      <span class="stepDesc">
+                      Description
+                      </span>
+                      </a>
+                    </li>
+                    <li><a href="#step-3" class="disabled" isdone="0" rel="3">
+                      <label class="stepNumber">3</label>
+                      <span class="stepDesc">
+                      Review
+                      </span>                   
+                      </a>
+                    </li>
+                    <li><a href="#step-4" class="disabled" isdone="0" rel="4">
+                      <label class="stepNumber">4</label>
+                      <span class="stepDesc">
+                      Upload
+                      </span>                   
+                      </a>
+                    </li>
+                  </ul>
+                  <div class="stepContainer" style="height: 396px;">
+                    <div id="step-1" class="content" style="display: block;">
+                      <h2 class="StepTitle">game info</h2>
+                      <div class="panel">
+                        <div class="panel-body">
+                          <form novalidate="novalidate" id="signup_form" name="signup_form" action="#" method="post" class="form-horizontal cacade-forms">
+                            <div class="form-group">
+                              <label class="col-lg-2 col-md-3 control-label">Game name :</label>
+                              <div class="col-lg-10 col-md-9">
+                                <input type="text" id="game_name" name="game_name" class="form-control form-cascade-control input-small">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label class="col-lg-2 col-md-3 control-label">Version :</label>
+                              <div class="col-lg-10 col-md-9">
+                                <input type="text" id="version" name="version" class="form-control form-cascade-control input-small">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label class="col-lg-2 col-md-3 control-label">Price :</label>
+                              <div class="col-lg-10 col-md-9">
+                                <input type="text" id="price" name="price" class="form-control form-cascade-control input-small">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label class="col-lg-2 col-md-3 control-label">Game info:</label>
+                              <div class="col-lg-10 col-md-9">
+                                <input type="text" id="game_info" name="game_info" class="form-control form-cascade-control input-small">
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="step-2" class="content" style="display: none;">
+                      <h2 class="StepTitle">Description</h2>
+                      <form novalidate="novalidate" id="signup_form" name="signup_form" action="#" method="post" class="form-horizontal cacade-forms">
+                        <div class="form-group">
+                          <label class="col-lg-2 col-md-3 control-label">Description</label>
+                          <div class="col-lg-10 col-md-9">
+                            <textarea style="margin: 0px -0.671875px 0px 0px; width: 100%; height: 100px;" rows="3" class="form-control form-cascade-control"></textarea>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <div id="step-3" class="content" style="display: none;">
+                      <h2 class="StepTitle">Review</h2>
+                      <div class="panel">
+                        <div class="panel-heading">
+                          <h3 class="panel-title"> Make a Note </h3>
+                        </div>
+                        <form novalidate="novalidate" id="signup_form" name="signup_form" action="#" method="post" class="form-horizontal cacade-forms">
+                          <div class="form-group">
+                            <label class="col-lg-2 col-md-3 control-label">Rewview</label>
+                            <div class="col-lg-10 col-md-9">
+                              <textarea style="margin: 0px -0.671875px 0px 0px; width: 100%; height: 100px;" rows="3" class="form-control form-cascade-control"></textarea>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                    <div id="step-4" class="content" style="display: none;">
+                      <h2 class="StepTitle">Finish</h2>
+                      <div class="panel">
+                        <div class="panel-heading">
+                          <h3 class="panel-title"> Thanks for your Registration! </h3>
+                          <p>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="actionBar">
+                    <div class="msgBox">
+                      <div class="content"></div>
+                      <a class="close" href="#">X</a>
+                    </div>
+                    <div class="loader">Loading</div>
+                    <a href="#" class="buttonFinish buttonDisabled">Finish</a><a href="#" class="buttonNext">Next</a><a href="#" class="buttonPrevious buttonDisabled">Previous</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
