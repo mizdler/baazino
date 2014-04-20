@@ -2,139 +2,194 @@
   <%= javascript_include_tag "application", media: "all", "data-turbolinks-track" => true %>
 
     <div class="site-holder">
-    <!-- this is a dummy text -->
-    <!-- .navbar -->
+      <div class="box-hol der">
+        <!-- .content -->
+        <div class="content">
+          
+          <!-- Basic Wizard -->
+          <div class="row">
+            <div class="col-md-12">
+              <div class="panel panel-dat">
+                <div class="panel-body nopadding">
+                  <!-- Smart Wizard -->
+                  <div id="wizard" class="swMain">
+                    <!-- header wizard -->
 
-    <!-- /.navbar -->
-    <!-- .box-holder -->
-    <div class="box-hol der">
-      <!-- .content -->
-      <div class="content">
-
-        <!-- Basic Wizard -->
-        <div class="row">
-          <div class="col-md-12">
-            <div class="panel panel-dat">
-              <div class="panel-body nopadding">
-                <!-- Smart Wizard -->
-                <div id="wizard" class="swMain">
-                  <!-- header wizard -->
-
-                  <ul>
-                    <li><a href="#step-1">
-                      <label class="stepNumber">1</label>
-                      <span class="stepDesc">
-                      Game
-                      </span>
-                      </a>
-                    </li>
-                    <li><a href="#step-2">
-                      <label class="stepNumber">2</label>
-                      <span class="stepDesc">
-                      Description
-                      </span>
-                      </a>
-                    </li>
-                    <li><a href="#step-3">
-                      <label class="stepNumber">3</label>
-                      <span class="stepDesc">
-                      Review
-                      </span>
-                      </a>
-                    </li>
-                    <li><a href="#step-4">
-                      <label class="stepNumber">4</label>
-                      <span class="stepDesc">
-                      Upload
-                      </span>
-                      </a>
-                    </li>
-                  </ul>
+                    <ul>
+                      <li><a href="#step-1">
+                        <label class="stepNumber">1</label>
+                        <span class="stepDesc">
+                        Game
+                        </span>
+                        </a>
+                      </li>
+                      <li><a href="#step-2">
+                        <label class="stepNumber">2</label>
+                        <span class="stepDesc">
+                        Game Info
+                        </span>
+                        </a>
+                      </li>
+                      <li><a href="#step-3">
+                        <label class="stepNumber">3</label>
+                        <span class="stepDesc">
+                        Review
+                        </span>                   
+                        </a>
+                      </li>
+                      <li><a href="#step-4">
+                        <label class="stepNumber">4</label>
+                        <span class="stepDesc">
+                        Upload
+                        </span>                   
+                        </a>
+                      </li>
+                    </ul>
 
 
 
 
-                  <div id="step-1">
-                    <h2 class="StepTitle">game info</h2>
-                    <div class="panel panel-cascade">
-                      <div class="panel-body">
-
-						<%= render "games/form"%>
-
-                      </div>
-                    </div>
-                  </div>
-
-
-                  <div id="step-2">
-                    <h2 class="StepTitle">Description</h2>
-                    <form class="form-horizontal cacade-forms" method="post" action="#" name="signup_form" id="signup_form" novalidate="novalidate">
+                    <div id="step-1">
+                      <h2 class="StepTitle">game info</h2>
                       <div class="panel panel-cascade">
-                        <div class="form-group">
-                          <label class="col-lg-2 col-md-3 control-label">Description</label>
-                          <div class="col-lg-10 col-md-9">
-                            <textarea class="form-control form-cascade-control" rows="3" style="margin: 0px -0.671875px 0px 0px; width: 100%; height: 100px;"></textarea>
-                          </div>
+                        <div class="panel-body">
+                          <%= form_for(@game ,:html => {:class => "form-horizontal cacade-forms"}) do |f| %>
+                              <% if @game.errors.any? %>
+                                <div id="error_explanation">
+                                  <h2><%= pluralize(@game.errors.count, "error") %> prohibited this game from being saved:</h2>
+
+                                  <ul>
+                                  <% @game.errors.full_messages.each do |msg| %>
+                                    <li><%= msg %></li>
+                                  <% end %>
+                                  </ul>
+                                </div>
+                              <% end %>
+
+                              <div class="form-group">
+                                <label class="col-lg-2 col-md-3 control-label"> نام بازی :</label>
+                                <div class="col-lg-10 col-md-9">
+                                  <%=f.text_field :game_name, class: "form-control form-cascade-control input-small" %>
+                                </div>
+                              </div>
+                              
+                              <div class="form-group">
+                                <label class="col-lg-2 col-md-3 control-label">ورژن :</label>
+                                <div class="col-lg-10 col-md-9">
+                                  <%=f.text_field :version , class: "form-control form-cascade-control input-small" %>
+                                </div>
+                              </div>
+
+                              <div class="form-group">
+                                <label class="col-lg-2 col-md-3 control-label">قیمت :</label>
+                                <div class="col-lg-10 col-md-9">
+                                  <%=f.text_field :price , class: "form-control form-cascade-control input-small" %>
+                                </div>
+                              </div>
+
+                              <div class="form-group">
+                                <label class="col-lg-2 col-md-3 control-label">توضیحات :</label>
+                                <div class="col-lg-10 col-md-9">
+                                  <%=f.text_area :description , class: "form-control form-cascade-control input-small" %>
+                                </div>
+                              </div>
+                          <% end %>
+
                         </div>
                       </div>
-                    </form>
-                  </div>
-
-
-
-                  <div id="step-3">
-                    <h2 class="StepTitle">Review</h2>
-                    <div class="panel panel-cascade">
-
-                      <form class="form-horizontal cacade-forms" method="post" action="#" name="signup_form" id="signup_form" novalidate="novalidate">
-                        <div class="form-group">
-                          <label class="col-lg-2 col-md-3 control-label">Review</label>
-                          <div class="col-lg-10 col-md-9">
-                            <textarea class="form-control form-cascade-control" rows="3" style="margin: 0px -0.671875px 0px 0px; width: 100%; height: 100px;"></textarea>
-                          </div>
-                        </div>
-                      </form>
                     </div>
-                    <div class="form-group">
-                      <label class="col-lg-2 col-md-3 control-label">Game info:</label>
-                      <div class="col-lg-10 col-md-9">
-                        <input type="text" class="form-control form-cascade-control input-small" name="game_info" id="game_info">
-                      </div>
-                    </div>
-                  </div>
 
 
-                  <div id="step-4">
-                    <h2 class="StepTitle">Finish</h2>
-                    <div class="panel panel-cascade">
-                      <div class="panel-heading">
-                        <h3 class="panel-title"> Upload your APK file hear </h3>
-                        <div class="panel-body nopadding" style="z-index:88;">
-                          <form id="upload" method="post" action="upload.php" enctype="multipart/form-data">
-                            <div id="drop" >
-                              Drop Here
-                              <br />
-                              <a>Browse</a>
-                              <input type="file" name="upl" multiple />
-                            </div>
+                    <div id="step-2">
+                      <h2 class="StepTitle">Game info:</h2>
+
+                      <%= form_for(@game.game_info ,:html=>{:class => " form-horizontal cacade-forms "}) do |f| %>
+                        <% if @game.errors.any? %>
+                          <div id="error_explanation">
+                            <h2><%= pluralize(@game.errors.count, "error") %> prohibited this game from being saved:</h2>
+
                             <ul>
-                              <!-- The file uploads will be shown here -->
+                            <% @game.errors.full_messages.each do |msg| %>
+                              <li><%= msg %></li>
+                            <% end %>
                             </ul>
-                          </form>
+                          </div>
+                          <% end %>
+                          <div class="panel panel-cascade">
+                            <div class="form-group">
+                              <label class="col-lg-2 col-md-3 control-label">Version support:</label>
+                              <div class="col-lg-10 col-md-9">
+                                <%= f.text_field :version_support ,class:"form-control form-cascade-control" %>
+                              </div>
+                            </div>
+                          </div>
+
+
+
+
+                          <% end %>
+                        
+                    </div>
+
+
+
+                    <div id="step-3">
+                      <h2 class="StepTitle">Review:</h2>
+
+                      <%= form_for(@game.review ,:html=>{:class => " form-horizontal cacade-forms "}) do |f| %>
+                        <% if @game.errors.any? %>
+                          <div id="error_explanation">
+                            <h2><%= pluralize(@game.errors.count, "error") %> prohibited this game from being saved:</h2>
+
+                            <ul>
+                            <% @game.errors.full_messages.each do |msg| %>
+                              <li><%= msg %></li>
+                            <% end %>
+                            </ul>
+                          </div>
+                          <% end %>
+                          <div class="panel panel-cascade">
+                            <div class="form-group">
+                              <label class="col-lg-2 col-md-3 control-label">Version suport:</label>
+                              <div class="col-lg-10 col-md-9">
+                                <%= f.text_area :content ,class:"form-control form-cascade-control" ,rows:"3" ,style:"margin: 0px -0.671875px 0px 0px; width: 100%; height: 500px;"%>
+                              </div>
+                            </div>
+                          </div>
+
+
+
+
+                          <% end %>
+                    </div>
+
+
+                    <div id="step-4">
+                      <h2 class="StepTitle">Finish</h2>
+                      <div class="panel panel-cascade">
+                        <div class="panel-heading">
+                          <h3 class="panel-title"> Upload your APK file hear </h3>
+                          <div id="dropzone">
+                            <form id="demo-upload" class="dropzone dz-clickable" action="http://www.torrentplease.com/dropzone.php">
+                              <div class="dz-default dz-message">
+                                <span>Drop files here to upload</span>
+                              </div>
+                            </form>
+                          </div>
                         </div>
                       </div>
+
+
                     </div>
 
 
                   </div>
-
-
                 </div>
               </div>
             </div>
+            
+            
           </div>
-
-
         </div>
       </div>
     </div>
