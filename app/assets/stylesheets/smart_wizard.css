@@ -1,11 +1,4 @@
-/*   
-  SmartWizard 2.0 plugin 
-  jQuery Wizard control Plugin
-  by Dipu
-  
-  http://www.techlaboratory.net
-  http://tech-laboratory.blogspot.com
-*/
+
 .swMain {
   position:relative;
   display:block;
@@ -23,7 +16,7 @@
   padding:0;    
   border: 0 solid #CCC;
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: hidden;
   clear:both;
   
 }
