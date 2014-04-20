@@ -1,4 +1,6 @@
 Baazino::Application.routes.draw do
+  resources :game_rates
+
   resources :platforms
 
   resources :banks

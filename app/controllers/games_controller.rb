@@ -1,6 +1,7 @@
 class GamesController < ApplicationController
   before_action :set_game, only: [:show, :edit, :update, :destroy]
 
+
   # GET /games
   # GET /games.json
   def index
@@ -28,9 +29,11 @@ class GamesController < ApplicationController
   # POST /games.json
   def create
     @game = Game.new(game_params)
+    @game_rate = GameRate.new();
+    @game_rate.game = @game;
 
     respond_to do |format|
-      if @game.save
+      if @game.save and @game_rate.save
         format.html { redirect_to @game, notice: 'Game was successfully created.' }
         format.json { render action: 'show', status: :created, location: @game }
       else

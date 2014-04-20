@@ -1,0 +1,35 @@
+<h1>Listing game_rates</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Game</th>
+      <th>Game play</th>
+      <th>Graphic</th>
+      <th>Story</th>
+      <th>Total</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @game_rates.each do |game_rate| %>
+      <tr>
+        <td><%= game_rate.game %></td>
+        <td><%= game_rate.game_play %></td>
+        <td><%= game_rate.graphic %></td>
+        <td><%= game_rate.story %></td>
+        <td><%= game_rate.total %></td>
+        <td><%= link_to 'Show', game_rate %></td>
+        <td><%= link_to 'Edit', edit_game_rate_path(game_rate) %></td>
+        <td><%= link_to 'Destroy', game_rate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Game rate', new_game_rate_path %>

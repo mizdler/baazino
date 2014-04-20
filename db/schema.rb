@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140419133416) do
+ActiveRecord::Schema.define(version: 20140420120308) do
 
   create_table "banks", force: true do |t|
     t.string   "bank_name"
@@ -72,6 +72,18 @@ ActiveRecord::Schema.define(version: 20140419133416) do
   end
 
   add_index "game_infos", ["platform_id"], name: "index_game_infos_on_platform_id"
+
+  create_table "game_rates", force: true do |t|
+    t.integer  "game_id"
+    t.integer  "game_play"
+    t.integer  "graphic"
+    t.integer  "story"
+    t.integer  "total"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "game_rates", ["game_id"], name: "index_game_rates_on_game_id"
 
   create_table "games", force: true do |t|
     t.string   "game_name"

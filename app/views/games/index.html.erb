@@ -1,16 +1,35 @@
-<h1>بازی ها</h1>
 
 	<div class="container">
-    <% @games.each do |game| %>
+		<div class="title">
+			<h2>برترین ها</h2>
+			<div class="more"><a href="">بیشتر</a></div>
+		</div>
+    <% top_rates.each do |game| %>
 
 		<article class="app">
 			<figure><a href=""><img src="tank.webp" alt="" class="thumb"></a></figure>
 			<h2><%= link_to game.game_name, game %></h2>
 			<div class="cat"><a href=""><%= game.description %></div>
-			<div class="price"><%= game.price %> تومان</div>
-			<td><%= link_to 'Edit', edit_game_path(game) %></td>
+			<div class="price"><% if game.price!=0 %><%= game.price %> تومان<%else%>رایگان<%end%> </div>
 		</article>
     <% end %>
     </div>
+
+    	<div class="container">
+		<div class="title">
+			<h2>بیشترین دانلود</h2>
+			<div class="more"><a href="">بیشتر</a></div>
+		</div>
+    <% most_downloads.each do |game| %>
+
+		<article class="app">
+			<figure><a href=""><img src="tank.webp" alt="" class="thumb"></a></figure>
+			<h2><%= link_to game.game_name, game %></h2>
+			<div class="cat"><a href=""><%= game.description %></div>
+			<div class="price"><% if game.price!=0 %><%= game.price %> تومان<%else%>رایگان<%end%> </div>
+		</article>
+    <% end %>
+    </div>
+
 
 <%= link_to 'New Game', new_game_path %>
