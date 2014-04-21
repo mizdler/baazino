@@ -11,9 +11,8 @@
 
 <body>
 	<header>
-		<nav>
-			<ul class="menu">
-				<li><%= link_to 'بازینو', games_path, class: "btn btn-defualt" %></li>
+		 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="height:  5%">
+			<div class="container">
 			    <% if user_signed_in? %>
 					<div class="btn-group" style="direction: ltr; float: left">
 					  <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
@@ -28,9 +27,9 @@
 					  </ul>
 					</div>
 			    <% else %>
-				    <a href="#" class="btn btn-lg btn-success" data-toggle="modal" data-target="#basicModal" style="float: left">ورود</a>
+				    <a href="#" class="btn btn-lg btn-success" data-toggle="modal" data-target="#basicModal" style="padding-top:0;float: left">ورود</a>
 
-				    <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+				    <div class="modal fade" id="basicModal" tabindex="2" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
 						<div class="modal-dialog">
 							<div class="modal-content">
 								<div class="modal-header">
@@ -44,8 +43,8 @@
 						</div>
 					</div>
 			    <% end %>
-			</ul>
-		</nav>
+			</div>
+		</div>
 	</header>
 
 <%= yield %>

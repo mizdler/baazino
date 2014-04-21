@@ -115,6 +115,13 @@
                             </ul>
                           </div>
                           <% end %>
+                          
+                          
+                          
+                          
+                          <%= select_tag(:platform, options_from_collection_for_select(find_platforms, "id", "name") ,  class:"chosen-container chosen-container-multi" ,
+                          style:"width: 350px;")%>
+                          
                           <div class="panel panel-cascade">
                             <div class="form-group">
                               <label class="col-lg-2 col-md-3 control-label">Version support:</label>
@@ -123,7 +130,6 @@
                               </div>
                             </div>
                           </div>
-
 
 
 

@@ -1,5 +1,9 @@
 module GamesHelper
 
+  def find_platforms
+    Platform.all
+  end
+  
   def top_rates
     #Game.join(:game_rate).order(:total_rate => :desc).limit(5)
     Game.all
