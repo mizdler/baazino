@@ -1,6 +1,9 @@
 class GamesController < ApplicationController
   before_action :set_game, only: [:show, :edit, :update, :destroy]
 
+  def submitgame
+    @game.save
+  end
 
   # GET /games
   # GET /games.json
@@ -16,8 +19,8 @@ class GamesController < ApplicationController
   # GET /games/new
   def new
     @game = Game.new
-    @game.game_info = GameInfo.new
-    @game.review = Review.new
+    @game.build_game_info
+    @game.build_review
   end
 
   # GET /games/1/edit
