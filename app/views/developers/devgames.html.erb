@@ -1,0 +1,29 @@
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", media: "all", "data-turbolinks-track" => true %>
+
+<h1>بازی های آپلود شده</h1>
+
+<div align="left" style="margin-left: 10px"><%= link_to 'آپلود بازی جدید', new_game_path, class: "btn btn-lg btn-primary btn-block", style: "width: 10%; color: white" %></div>
+<br />
+
+<table id="devgames_table" class="display">
+  <thead>
+    <tr>
+      <th style="text-align: right">نام بازی</th>
+      <th style="text-align: right">تاریخ انتشار</th>
+      <th style="text-align: right">تعداد دانلود</th>
+      <th style="text-align: right">امتیاز کل</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @developer_games.each do |game| %>
+      <tr>
+        <td><%= link_to game.game_name, edit_game_path(game) %></td>
+        <td><%= game.created_at %></td>
+        <td><%= game.game_info.downloads_num %></td>
+        <td><%= game.game_rate.total %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
