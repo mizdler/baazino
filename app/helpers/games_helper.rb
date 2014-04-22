@@ -1,13 +1,11 @@
 module GamesHelper
 
   def top_rates
-    #Game.join(:game_rate).order(:total_rate => :desc).limit(5)
-    Game.all
+    Game.joins(:game_rate).order("game_rates.total desc").limit(5)
   end
 
   def most_downloads
-    #Game.join(:game_info).order(:downloads_num => :desc).limit(5)
-    Game.all
+    Game.joins(:game_info).order("game_infos.downloads_num desc").limit(5)
   end
 
   def new_ones
