@@ -1,7 +1,7 @@
 <%= javascript_include_tag "jquery.smartwizard", media: "all", "data-turbolinks-track" => true %>
 <%= javascript_include_tag "smartwizard-custom", media: "all", "data-turbolinks-track" => true %>
 
- <%= form_for(@game ,:html => {:class => "form-horizontal cacade-forms"}) do |f| %>
+ <%= nested_form_for @game do |f| %>
 
     <div class="site-holder">
       <div class="box-hol der">
@@ -87,9 +87,31 @@
                       </div>
                     </div>
 
+					<%= f.fields_for :game_info do |g| %>
+                    <div id="step-2">
+                      <h2 class="StepTitle">Game info:</h2>
 
+                          <div class="form-group">
+                          	<label class="col-lg-2 col-md-3 control-label">Version support:</label>
+                          	<div class="col-lg-10 col-md-9">
+	                          	<%= select_tag(:platform, options_from_collection_for_select(find_platforms, "id", "name") ,  class:"chosen-container chosen-container-multi" ,
+	                          	style:"width: 350px;")%>
+                          	</div>
+	                      </div>
+                          <div class="panel panel-cascade">
+                            <div class="form-group">
+                              <label class="col-lg-2 col-md-3 control-label">Version support:</label>
+                              <div class="col-lg-10 col-md-9">
+                                <%= g.text_field :version_support ,class:"form-control form-cascade-control" %>
+                              </div>
+                            </div>
+                          </div>
 
-					<% f.fields_for :review do |r| %>
+                    </div>
+
+					<% end %>
+
+					<%= f.fields_for :review do |r| %>
                     <div id="step-3">
                       <h2 class="StepTitle">Review:</h2>
                           <div class="panel panel-cascade">

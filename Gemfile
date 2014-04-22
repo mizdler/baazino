@@ -38,6 +38,9 @@ end
 gem 'jquery-ui-rails'
 gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
 
+gem 'simple_form'
+gem "nested_form"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
