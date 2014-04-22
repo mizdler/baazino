@@ -35,6 +35,10 @@ Baazino::Application.routes.draw do
   # Example of regular route:
      get 'devgames' => 'developers#devgames'
 
+     get 'topgames' => 'games#all_top'
+     get 'newgames' => 'games#all_new'
+     get 'dowloadedgames' => 'games#all_downloaded'
+
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 

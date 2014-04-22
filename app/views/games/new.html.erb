@@ -1,7 +1,7 @@
 <%= javascript_include_tag "jquery.smartwizard", media: "all", "data-turbolinks-track" => true %>
 <%= javascript_include_tag "smartwizard-custom", media: "all", "data-turbolinks-track" => true %>
 
- <%= nested_form_for @game do |f| %>
+ <%= simple_nested_form_for @game do |f| %>
 
     <div class="site-holder">
       <div class="box-hol der">
@@ -87,7 +87,7 @@
                       </div>
                     </div>
 
-					<%= f.fields_for :game_info do |g| %>
+					<%= f.simple_fields_for :game_info do |g| %>
                     <div id="step-2">
                       <h2 class="StepTitle">Game info:</h2>
 
@@ -111,7 +111,7 @@
 
 					<% end %>
 
-					<%= f.fields_for :review do |r| %>
+					<%= f.simple_fields_for :review do |r| %>
                     <div id="step-3">
                       <h2 class="StepTitle">Review:</h2>
                           <div class="panel panel-cascade">

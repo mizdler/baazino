@@ -1,6 +1,17 @@
 class GamesController < ApplicationController
   before_action :set_game, only: [:show, :edit, :update, :destroy]
 
+  def all_top
+
+  end
+
+  def all_new
+
+  end
+
+  def all_downloaded
+
+  end
   # GET /games
   # GET /games.json
   def index
