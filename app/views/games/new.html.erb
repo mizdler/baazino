@@ -1,10 +1,13 @@
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", media: "all", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "jquery.smartwizard", media: "all", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "smartwizard-custom", media: "all", "data-turbolinks-track" => true %>
+
+ <%= form_for(@game ,:html => {:class => "form-horizontal cacade-forms"}) do |f| %>
 
     <div class="site-holder">
       <div class="box-hol der">
         <!-- .content -->
         <div class="content">
+
 
           <!-- Basic Wizard -->
           <div class="row">
@@ -47,24 +50,10 @@
                     </ul>
 
 
-
-
                     <div id="step-1">
                       <h2 class="StepTitle">game info</h2>
                       <div class="panel panel-cascade">
                         <div class="panel-body">
-                          <%= form_for(@game ,:html => {:class => "form-horizontal cacade-forms"}) do |f| %>
-                              <% if @game.errors.any? %>
-                                <div id="error_explanation">
-                                  <h2><%= pluralize(@game.errors.count, "error") %> prohibited this game from being saved:</h2>
-
-                                  <ul>
-                                  <% @game.errors.full_messages.each do |msg| %>
-                                    <li><%= msg %></li>
-                                  <% end %>
-                                  </ul>
-                                </div>
-                              <% end %>
 
                               <div class="form-group">
                                 <label class="col-lg-2 col-md-3 control-label"> نام بازی :</label>
@@ -93,84 +82,28 @@
                                   <%=f.text_area :description , class: "form-control form-cascade-control input-small" %>
                                 </div>
                               </div>
-                          <% end %>
 
                         </div>
                       </div>
                     </div>
 
 
-                    <div id="step-2">
-                      <h2 class="StepTitle">Game info:</h2>
 
-                      <%= form_for(@game.game_info ,:html=>{:class => " form-horizontal cacade-forms "}) do |f| %>
-                        <% if @game.errors.any? %>
-                          <div id="error_explanation">
-                            <h2><%= pluralize(@game.errors.count, "error") %> prohibited this game from being saved:</h2>
-
-                            <ul>
-                            <% @game.errors.full_messages.each do |msg| %>
-                              <li><%= msg %></li>
-                            <% end %>
-                            </ul>
-                          </div>
-                          <% end %>
-                          
-                          
-                          <div class="form-group">
-                          	<label class="col-lg-2 col-md-3 control-label">Version support:</label>
-                          	<div class="col-lg-10 col-md-9">
-	                          	<%= select_tag(:platform, options_from_collection_for_select(find_platforms, "id", "name") ,  class:"chosen-container chosen-container-multi" ,
-	                          	style:"width: 350px;")%>
-                          	</div>
-	                      </div>
-                          <div class="panel panel-cascade">
-                            <div class="form-group">
-                              <label class="col-lg-2 col-md-3 control-label">Version support:</label>
-                              <div class="col-lg-10 col-md-9">
-                                <%= f.text_field :version_support ,class:"form-control form-cascade-control" %>
-                              </div>
-                            </div>
-                          </div>
-
-
-
-                          <% end %>
-
-                    </div>
-
-
-
+					<% f.fields_for :review do |r| %>
                     <div id="step-3">
                       <h2 class="StepTitle">Review:</h2>
-
-                      <%= form_for(@game.review ,:html=>{:class => " form-horizontal cacade-forms "}) do |f| %>
-                        <% if @game.errors.any? %>
-                          <div id="error_explanation">
-                            <h2><%= pluralize(@game.errors.count, "error") %> prohibited this game from being saved:</h2>
-
-                            <ul>
-                            <% @game.errors.full_messages.each do |msg| %>
-                              <li><%= msg %></li>
-                            <% end %>
-                            </ul>
-                          </div>
-                          <% end %>
                           <div class="panel panel-cascade">
                             <div class="form-group">
                               <label class="col-lg-2 col-md-3 control-label">Version suport:</label>
                               <div class="col-lg-10 col-md-9">
-                                <%= f.text_area :content ,class:"form-control form-cascade-control" ,rows:"3" ,style:"margin: 0px -0.671875px 0px 0px; width: 100%; height: 500px;"%>
+                                <%= r.text_area :content ,class:"form-control form-cascade-control" ,rows:"3" ,style:"margin: 0px -0.671875px 0px 0px; width: 100%; height: 500px;"%>
                               </div>
                             </div>
                           </div>
 
-
-
-
-                          <% end %>
                     </div>
 
+					<% end %>
 
                     <div id="step-4">
                       <h2 class="StepTitle">Finish</h2>
@@ -198,6 +131,12 @@
 
 
           </div>
+
         </div>
       </div>
     </div>
+
+  <div class="actions">
+	<%= f.submit %>
+  </div>
+  <% end %>
