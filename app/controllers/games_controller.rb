@@ -41,8 +41,9 @@ class GamesController < ApplicationController
   # POST /games.json
   def create
     @game = Game.new(game_params)
-    @game_rate = GameRate.new();
-    @game_rate.game = @game;
+    @game.developer = current_user.developer
+    @game_rate = GameRate.new()
+    @game_rate.game = @game
 
     respond_to do |format|
       if @game.save and @game_rate.save

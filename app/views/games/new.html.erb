@@ -1,7 +1,7 @@
 <%= javascript_include_tag "jquery.smartwizard", media: "all", "data-turbolinks-track" => true %>
 <%= javascript_include_tag "smartwizard-custom", media: "all", "data-turbolinks-track" => true %>
 
- <%= form_for @game do |f| %>
+ <%= form_for(@game ,:html => {:class => "form-horizontal cacade-forms"}) do |f| %>
 
     <div class="site-holder">
       <div class="box-hol der">
@@ -133,11 +133,7 @@
                         <div class="panel-heading">
                           <h3 class="panel-title"> Upload your APK file hear </h3>
                           <div id="dropzone">
-                            <form id="demo-upload" class="dropzone dz-clickable" action="http://www.torrentplease.com/dropzone.php">
-                              <div class="dz-default dz-message">
-                                <span>Drop files here to upload</span>
-                              </div>
-                            </form>
+
                           </div>
                         </div>
                       </div>
