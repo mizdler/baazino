@@ -26,7 +26,6 @@ class GamesController < ApplicationController
   # GET /games/new
   def new
     @game = Game.new
-    @game.build_game_info
     @game.build_review
   end
 
