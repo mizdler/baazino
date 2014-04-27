@@ -22,7 +22,7 @@ module GamesHelper
   end
 
   def most_downloads
-    Game.joins(:game_info).order("game_infos.downloads_num desc").limit(5)
+    Game.order(:downloads_num => :desc).limit(5)
   end
 
   def new_ones

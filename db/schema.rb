@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140420175326) do
+ActiveRecord::Schema.define(version: 20140427215922) do
 
   create_table "banks", force: true do |t|
     t.string   "bank_name"
@@ -54,19 +54,6 @@ ActiveRecord::Schema.define(version: 20140420175326) do
   add_index "developers", ["developer_account_id"], name: "index_developers_on_developer_account_id"
   add_index "developers", ["user_id"], name: "index_developers_on_user_id"
 
-  create_table "game_genres", force: true do |t|
-    t.integer  "game_id"
-    t.integer  "genre_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "game_genres", ["game_id"], name: "index_game_genres_on_game_id"
-  add_index "game_genres", ["genre_id"], name: "index_game_genres_on_genre_id"
-
-# Could not dump table "game_infos" because of following NoMethodError
-#   undefined method `[]' for nil:NilClass
-
   create_table "game_rates", force: true do |t|
     t.integer  "game_id"
     t.integer  "game_play"
@@ -79,27 +66,8 @@ ActiveRecord::Schema.define(version: 20140420175326) do
 
   add_index "game_rates", ["game_id"], name: "index_game_rates_on_game_id"
 
-  create_table "games", force: true do |t|
-    t.string   "game_name"
-    t.string   "version"
-    t.date     "create_date"
-    t.date     "release_date"
-    t.string   "description"
-    t.integer  "developer_id"
-    t.integer  "game_info_id"
-    t.integer  "review_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "price"
-    t.string   "install_file_file_name"
-    t.string   "install_file_content_type"
-    t.integer  "install_file_file_size"
-    t.datetime "install_file_updated_at"
-  end
-
-  add_index "games", ["developer_id"], name: "index_games_on_developer_id"
-  add_index "games", ["game_info_id"], name: "index_games_on_game_info_id"
-  add_index "games", ["review_id"], name: "index_games_on_review_id"
+# Could not dump table "games" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
 
   create_table "gates", force: true do |t|
     t.string   "bank_name"

@@ -19,7 +19,7 @@
       <tr>
         <td><%= link_to game.game_name, edit_game_path(game) %></td>
         <td><%= game.created_at %></td>
-        <td><%= game.game_info.downloads_num %></td>
+        <td><%= game.downloads_num %></td>
         <td><%= game.game_rate.total %></td>
       </tr>
     <% end %>

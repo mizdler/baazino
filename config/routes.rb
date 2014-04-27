@@ -17,8 +17,6 @@ Baazino::Application.routes.draw do
 
   resources :genres
 
-  resources :game_genres
-
   resources :comments
 
   resources :purchases
