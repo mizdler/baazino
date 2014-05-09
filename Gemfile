@@ -38,6 +38,7 @@ end
 gem 'jquery-ui-rails'
 gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
 
+gem 'ajaxful_rating', '~> 3.0.0.beta8'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'

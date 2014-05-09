@@ -1,29 +1,41 @@
-<div class="container">
-	<article class="app app-post">
-		<div class= "coverPhoto">
-			<% if @game.cover_photo %>
-			<%= image_tag @game.cover_photo.url %>
-			<% end%>
-		</div>
-		<section class="app-tt">
-			<h2><%= @game.game_name %></h2>
-			<h4>تاریخ: <%= @game.release_date %></h4>
-			<h4>برنامه نویس: <%= @game.developer.user.email %></h4>
-			<div class="cat more"></div>
-		</section>
-		<div class="desc">
-			<%= @game.description %>
-		</div>
-		<aside>
-			<div class="price">
-				قیمت:<%= @game.price %> تومان
-			</div>
-			<div class="version">
-				نسخه:<%= @game.version %>
-			</div>
-			<%= link_to "دانلود", @game.install_file.url(:original, false) %>
-		</aside>
-	</article>
-</div>
+<%= stylesheet_link_tag "gameshow", media: "all" %>
+<div class="col-lg-12" style="margin-top:20px;">
+	<div class="detail col-lg-12">
+	    
+	    <div class="download col-lg-9" >
+		  	<div class="clo-lg-3"></div>
+		  	<div class="clo-lg-6">
+	        
+		        <div id = "gmn">
+		         	<h2><%= @game.game_name %></h2>
+		        </div>
+		        
+		        <div id = "devn">
+		          	<h4>برنامه نویس: <%= @game.developer.user.email %></h4>
+		        </div>
+		        
+		        <div id = "dlbt">
+		          	<div class="btn-group">
+		            	<%= button_to "دانلود", @game.install_file.url(:original, false) , :method => "get",class:"dnb btn btn-success clo-lg-4" %>
+		          	</div>
+		        </div>
+		        <div class="version">
+					نسخه:<%= @game.version %>
+				</div>
 
-<%= link_to 'Back', games_path %>
+
+				<div class="pric">
+					قیمت:<%= @game.price %> تومان
+				</div>
+
+		        <div id = "ranking"></div>
+      		</div>
+	    </div>
+
+	    <div class="col-lg-3 ">
+	        <% if @game.cover_photo %>
+				<%= image_tag  @game.cover_photo.url , class:"image" %>
+			<% end%>
+	    </div>
+  	</div>
+</div>
