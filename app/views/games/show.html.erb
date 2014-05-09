@@ -1,41 +1,49 @@
-<%= stylesheet_link_tag "gameshow", media: "all" %>
-<div class="col-lg-12" style="margin-top:20px;">
-	<div class="detail col-lg-12">
-	    
-	    <div class="download col-lg-9" >
-		  	<div class="clo-lg-3"></div>
-		  	<div class="clo-lg-6">
-	        
-		        <div id = "gmn">
-		         	<h2><%= @game.game_name %></h2>
-		        </div>
-		        
-		        <div id = "devn">
-		          	<h4>برنامه نویس: <%= @game.developer.user.email %></h4>
-		        </div>
-		        
-		        <div id = "dlbt">
-		          	<div class="btn-group">
-		            	<%= button_to "دانلود", @game.install_file.url(:original, false) , :method => "get",class:"dnb btn btn-success clo-lg-4" %>
-		          	</div>
-		        </div>
-		        <div class="version">
-					نسخه:<%= @game.version %>
-				</div>
 
+<div class = "col-lg-12" style="margin-top:20px;">
+  <div class="detail col-lg-12">
+        <div class="download col-lg-9" >
+          <div class="clo-lg-3"></div>
+          <div class="clo-lg-6">
+            
+            <div id = "gmn">
+              <h2><%= @game.game_name %></h2>
+            </div>
+            
+            <div id = "devn">
+              <h4>برنامه نویس: <%= @game.developer.user.email %></h4>
+            </div>
+            
+            <div id = "typ">
+              <a href = "#"> action</a>
+            </div>              
+            
+            <div id = "dlbt">
+              <div class="btn-group">
+                <button type="button" class="btn btn-success col-log-4" id = "wishlist"> add to wish list</button>
+                <%button_to "دانلود",@game.install_file.url(:original, false), class:"btn btn-success clo-lg-4"%>
+              </div>
+            </div>
+            
+            <div class="price">
+				قیمت:<%= @game.price %> تومان
+			</div>
+			<div class="version">
+				نسخه:<%= @game.version %>
+			</div>
+			<div class="line col-lg-8 col-lg-offset-2"></div>
 
-				<div class="pric">
-					قیمت:<%= @game.price %> تومان
-				</div>
+            <div id = "ranking">
+            	<%= link_to "Upvote", like_game_path(@game), method: :put %>
+				<%= link_to "Downvote", dislike_game_path(@game), method: :put %>
+				<%= @game.get_likes.size %> 
+            </div>
+          </div>
+        </div>
 
-		        <div id = "ranking"></div>
-      		</div>
-	    </div>
-
-	    <div class="col-lg-3 ">
-	        <% if @game.cover_photo %>
-				<%= image_tag  @game.cover_photo.url , class:"image" %>
+        <div class="col-lg-3 ">
+            <% if @game.cover_photo %>
+				<%= image_tag @game.cover_photo.url , class:"image" %>
 			<% end%>
-	    </div>
-  	</div>
-</div>
+        </div>
+  </div>
+<div>

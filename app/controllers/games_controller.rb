@@ -9,6 +9,18 @@ class GamesController < ApplicationController
 
   end
 
+  def upvote
+      @game = Game.find(params[:id])
+      @game.liked_by current_user
+      redirect_to @game
+  end
+
+  def downvote
+    @game = Game.find(params[:id])
+    @game.downvote_from current_user
+    redirect_to @game
+  end
+
   def all_downloaded
 
   end
@@ -89,4 +101,6 @@ class GamesController < ApplicationController
     def game_params
       params.require(:game).permit(:game_name, :version, :create_date, :release_date, :description, :developer_id, :game_info_id, :game_genre_id, :review_id, :price, :install_file, :platform, :support_version, :content, :cover_photo)
     end
+
+    
 end

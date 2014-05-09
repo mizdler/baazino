@@ -203,3 +203,10 @@ pre
 	direction: rtl;
 	color: green;
 }
+
+.line
+{
+	height: 1px;
+	background-color: rgb(61 , 94 , 46);
+	box-shadow: 3px 3px 2px 0px;
+}

@@ -82,4 +82,11 @@ Baazino::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  resources :game do
+    member do
+      put "like", to: "games#upvote"
+      put "dislike", to: "games#downvote"
+    end
+end
 end
