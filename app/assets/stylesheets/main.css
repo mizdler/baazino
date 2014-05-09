@@ -1,29 +1,9 @@
-/* reset */
-figure {
-	margin: 0;
+body{
+	background : url('bg_main.jpg');
+	background-repeat: repeat-x;
+	background-color: rgb(106, 165, 195);
+	font-family: Adobe Arabic;
 }
-
-a {
-	text-decoration: none;
-	color: #737377;
-}
-
-a:hover {
-	text-decoration: underline;
-}
-
-body {
-	background: #e5e5e5;
-	direction: rtl;
-}
-
-header {
-	background: #fff;
-	width: 100%;
-	-webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.05);
-	box-shadow: 0 1px 0 rgba(0,0,0,0.05);
-}
-
 .menu {
 	list-style: none;
 	margin: 10;
@@ -53,31 +33,47 @@ header {
 	padding: 10px;
 	margin: 0 auto;
 	display: table;
+	
+}
+
+.receptacle {
+	width: 85%;
+	padding: 10px;
+	margin: 0 auto;
+	margin-top: 10px;
+	display: table;
+	background-color: rgba(0, 0, 0, 0.1);
 }
 
 .title {
 	width: 100%;
 	display: table;
+	font-size: 16pt;
+	color: rgb(62, 45, 53);
+	font-weight: bold;
 }
 
 .title h2 {
 	float: right;
 }
 
+
 .title .more {
 	float: left;
 	margin: 25px 40px;
 }
-
+.more{
+	margin-top:270px;
+}
 .more a, .buy {
 	color: #fff !important;
-	background-color: rgb(179, 200, 51);
+	background-color: rgba(0, 0, 0, 0.2);
 	padding: 4px 12px;
 	transition: all 0.2s ease 0s;
 }
 
 .more a:hover, .buy:hover {
-	box-shadow: 0px -2px 0px rgba(0, 0, 0, 0.27) inset;
+	background-color: rgba(0, 0, 0, 0.3);
 	text-decoration: none;
 }
 
@@ -96,17 +92,20 @@ header {
 	float: right;
 	margin: 10px;
 	height: 270px;
-	-moz-border-radius: 2px;
-	-webkit-border-radius: 2px;
-	border-radius: 2px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
 	-moz-box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 	-ms-box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 	-webkit-box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 	box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+	display: block;
+	color: black;
 }
 
 .app a {
 	color: #333;
+	text-decoration: none;
 }
 
 .app h2 {
@@ -124,8 +123,28 @@ header {
 
 .price {
 	float: left;
+	color: green;
+	margin-left: 3px;
 }
 
+
+.priceMain {
+	float: left;
+	color: green;
+	margin-left: 3px;
+	position: relative;
+	top : 40px;
+}
+.gameName{
+	color:rgba(0,0,0,0.6);
+	font-weight: bold;
+	margin-top: 3px;
+	margin-right: 3px;
+}
+
+.appLink :hover{
+	background-color: rgb(150, 150, 150);
+}
 .app-post {
 	width: 97%;
 	padding: 10px;
@@ -208,4 +227,21 @@ header {
 	-ms-box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 	-webkit-box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 	box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.coverPhoto img{
+	width: 170px;
+	height: 170px;
+}
+
+.siteName{
+	color: white;
+	font-size: 20pt;
+	font-weight: bold;
+	float: right;
+	margin:40px;
+}
+.siteNameTitle{
+	font-size: 25pt;
+	color: red;
 }

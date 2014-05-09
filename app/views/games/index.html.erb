@@ -1,48 +1,121 @@
+<script>
+	$(function() {
+		if (!flux.browser.supportsTransitions)
+			;
+		//alert("Flux Slider requires a browser that supports CSS3 transitions");
 
-	<div class="container">
-		<div class="title">
-			<h2>برترین ها</h2>
-			<div class="more"><a href="/topgames">بیشتر</a></div>
+		window.f = new flux.slider('#slider', {
+			pagination : true,
+			width : 750,
+			height : 300
+		});
+	}); 
+</script>
+<div class="siteName">
+	<div class="siteNameTitle">
+		بازینــــــــــــــــــــــــــــــــو
+	</div>
+	اولین سایت تخصصی بازی برای اندروید و آیفون
+</div>
+<section class="container">
+	<div id="slider">
+		<% Game.all.each do |game| %>
+		<%= image_tag(game.cover_photo ) %>
+		<%end%>
+	</div>
+</section>
+
+<div class="receptacle">
+	<div class="title">
+		<h2>برترین ها</h2>
+	</div>
+
+	<% top_rates.each do |game| %>
+	<%= link_to game, :class => "appLink" do %>
+	<article class="app">
+		<div class= "coverPhoto">
+			<% if game.cover_photo %>
+			<%= image_tag game.cover_photo.url %>
+			<% end%>
 		</div>
-    <% top_rates.each do |game| %>
-
-		<article class="app">
-			<figure><a href=""><img src="tank.webp" alt="" class="thumb"></a></figure>
-			<h2><%= link_to game.game_name, game %></h2>
-			<div class="cat"><a href=""><%= game.description %></div>
-			<div class="price"><% if game.price!=0 %><%= game.price %> تومان<%else%>رایگان<%end%> </div>
-		</article>
-    <% end %>
-    </div>
-
-	<div class="container">
-		<div class="title">
-			<h2>تازه ها</h2>
-			<div class="more"><a href="/newgames">بیشتر</a></div>
+		<div class="gameName">
+			<%= game.game_name %>
 		</div>
-    <% new_ones.each do |game| %>
-
-		<article class="app">
-			<figure><a href=""><img src="tank.webp" alt="" class="thumb"></a></figure>
-			<h2><%= link_to game.game_name, game %></h2>
-			<div class="cat"><a href=""><%= game.description %></div>
-			<div class="price"><% if game.price!=0 %><%= game.price %> تومان<%else%>رایگان<%end%> </div>
-		</article>
-    <% end %>
-    </div>
-
-    <div class="container">
-		<div class="title">
-			<h2>بیشترین دانلود</h2>
-			<div class="more"><a href="/dowloadedgames">بیشتر</a></div>
+		<div class="cat">
+			<%= game.description %>
 		</div>
-    <% most_downloads.each do |game| %>
+		<div class="priceMain">
+			<% if game.price!=0 %><%= game.price %> تومان<%else%>رایگان<%end%>
+		</div>
+	</article>
+	<% end %>
+	<% end %>
+	<div class="more">
+		<a href="/topgames">بیشتر</a>
+	</div>
 
-		<article class="app">
-			<figure><a href=""><img src="tank.webp" alt="" class="thumb"></a></figure>
-			<h2><%= link_to game.game_name, game %></h2>
-			<div class="cat"><a href=""><%= game.description %></div>
-			<div class="price"><% if game.price!=0 %><%= game.price %> تومان<%else%>رایگان<%end%> </div>
-		</article>
-    <% end %>
-    </div>
+</div>
+
+<div class="receptacle">
+
+	<div class="title">
+		<h2>تازه ها</h2>
+
+	</div>
+
+	<% new_ones.each do |game| %>
+	<%= link_to game, :class => "appLink" do %>
+	<article class="app">
+		<div class= "coverPhoto">
+			<% if game.cover_photo %>
+			<%= image_tag game.cover_photo.url %>
+			<% end%>
+		</div>
+		<div class="gameName">
+			<%= game.game_name %>
+		</div>
+		<div class="cat">
+			<%= game.description %>
+		</div>
+		<div class="priceMain">
+			<% if game.price!=0 %><%= game.price %> تومان<%else%>رایگان<%end%>
+		</div>
+	</article>
+	<% end %>
+	<% end %>
+
+	<div class="more">
+		<a href="/newgames">بیشتر</a>
+	</div>
+
+</div>
+
+<div class="receptacle">
+	<div class="title">
+		<h2>بیشترین دانلود</h2>
+	</div>
+	<% most_downloads.each do |game| %>
+	<%= link_to game, :class => "appLink" do %>
+	<article class="app">
+		<div class= "coverPhoto">
+			<% if game.cover_photo %>
+			<%= image_tag game.cover_photo.url %>
+			<% end%>
+		</div>
+		<div class="gameName">
+			<%= game.game_name %>
+		</div>
+		<div class="cat">
+			<%= game.description %>
+		</div>
+		<div class="priceMain">
+			<% if game.price!=0 %><%= game.price %> تومان<%else%>رایگان<%end%>
+		</div>
+	</article>
+	<% end %>
+	<% end %>
+
+	<div class="more">
+		<a href="/dowloadedgames">بیشتر</a>
+	</div>
+</div>

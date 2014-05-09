@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140427215922) do
+ActiveRecord::Schema.define(version: 20140508142813) do
 
   create_table "banks", force: true do |t|
     t.string   "bank_name"
@@ -81,6 +81,16 @@ ActiveRecord::Schema.define(version: 20140427215922) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "likes", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "game_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "likes", ["game_id"], name: "index_likes_on_game_id"
+  add_index "likes", ["user_id"], name: "index_likes_on_user_id"
 
   create_table "platforms", force: true do |t|
     t.string   "name"

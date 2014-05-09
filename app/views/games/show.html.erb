@@ -1,22 +1,29 @@
-
-	<div class="container">
-		<article class="app app-post">
-			<figure><img src="tank.webp" class="thumb"></figure>
-			<section class="app-tt">
-				<h2><%= @game.game_name %></h2>
-				<h4>تاریخ: <%= @game.release_date %></h4>
-				<h4>برنامه نویس: <%= @game.developer.user.email %></h4>
-				<div class="cat more"></div>
-			</section>
-			<div class="desc">
-				<%= @game.description %>
+<div class="container">
+	<article class="app app-post">
+		<div class= "coverPhoto">
+			<% if @game.cover_photo %>
+			<%= image_tag @game.cover_photo.url %>
+			<% end%>
+		</div>
+		<section class="app-tt">
+			<h2><%= @game.game_name %></h2>
+			<h4>تاریخ: <%= @game.release_date %></h4>
+			<h4>برنامه نویس: <%= @game.developer.user.email %></h4>
+			<div class="cat more"></div>
+		</section>
+		<div class="desc">
+			<%= @game.description %>
+		</div>
+		<aside>
+			<div class="price">
+				قیمت:<%= @game.price %> تومان
 			</div>
-			<aside>
-				<div class="price">قیمت:<%= @game.price %> تومان</div>
-				<div class="version">نسخه:<%= @game.version %></div>
-				<%= link_to "دانلود", @game.install_file.url(:original, false) %>
-			</aside>
-		</article>
-	</div>
+			<div class="version">
+				نسخه:<%= @game.version %>
+			</div>
+			<%= link_to "دانلود", @game.install_file.url(:original, false) %>
+		</aside>
+	</article>
+</div>
 
 <%= link_to 'Back', games_path %>
