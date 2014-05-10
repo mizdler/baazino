@@ -33,6 +33,9 @@ class GamesController < ApplicationController
   # GET /games/1
   # GET /games/1.json
   def show
+    @game = Game.find(params[:id])
+    @comments = @game.comment_threads.order('created_at desc')
+    @new_comment = Comment.build_from(@game, current_user, "")
   end
 
   # GET /games/new

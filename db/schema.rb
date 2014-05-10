@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140509173100) do
+ActiveRecord::Schema.define(version: 20140509193557) do
 
   create_table "banks", force: true do |t|
     t.string   "bank_name"
@@ -20,16 +20,20 @@ ActiveRecord::Schema.define(version: 20140509173100) do
   end
 
   create_table "comments", force: true do |t|
-    t.integer  "stars"
-    t.string   "text"
-    t.date     "submit_date"
-    t.integer  "user_id"
-    t.integer  "game_id"
+    t.integer  "commentable_id",   default: 0
+    t.string   "commentable_type"
+    t.string   "title"
+    t.text     "body"
+    t.string   "subject"
+    t.integer  "user_id",          default: 0, null: false
+    t.integer  "parent_id"
+    t.integer  "lft"
+    t.integer  "rgt"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "comments", ["game_id"], name: "index_comments_on_game_id"
+  add_index "comments", ["commentable_id", "commentable_type"], name: "index_comments_on_commentable_id_and_commentable_type"
   add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
   create_table "developer_accounts", force: true do |t|
