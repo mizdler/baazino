@@ -1,4 +1,6 @@
 Baazino::Application.routes.draw do
+  resources :profiles
+
   resources :likes
 
   resources :game_rates
@@ -32,6 +34,7 @@ Baazino::Application.routes.draw do
 
   # Example of regular route:
      get 'devgames' => 'developers#devgames'
+     get 'purchased_games' => 'purchases#purchased_games'
 
      get 'topgames' => 'games#all_top'
      get 'newgames' => 'games#all_new'

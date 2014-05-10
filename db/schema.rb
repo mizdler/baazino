@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140508142813) do
+ActiveRecord::Schema.define(version: 20140510141413) do
 
   create_table "banks", force: true do |t|
     t.string   "bank_name"
@@ -53,6 +53,25 @@ ActiveRecord::Schema.define(version: 20140508142813) do
 
   add_index "developers", ["developer_account_id"], name: "index_developers_on_developer_account_id"
   add_index "developers", ["user_id"], name: "index_developers_on_user_id"
+
+  create_table "documents", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "blob_file_name"
+    t.string   "blob_content_type"
+    t.integer  "blob_file_size"
+    t.datetime "blob_updated_at"
+  end
+
+  create_table "game_images", force: true do |t|
+    t.integer  "game_id"
+    t.integer  "image_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "game_images", ["game_id"], name: "index_game_images_on_game_id"
+  add_index "game_images", ["image_id"], name: "index_game_images_on_image_id"
 
   create_table "game_rates", force: true do |t|
     t.integer  "game_id"
@@ -97,6 +116,20 @@ ActiveRecord::Schema.define(version: 20140508142813) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "profiles", force: true do |t|
+    t.integer  "user_id"
+    t.string   "firstname"
+    t.string   "lastname"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+  end
+
+  add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"
 
   create_table "purchases", force: true do |t|
     t.date     "purchase_date"
