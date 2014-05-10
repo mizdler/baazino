@@ -92,5 +92,7 @@ Baazino::Application.routes.draw do
       put "dislike", to: "games#downvote"
     end
   end
-    resources :comments, :only => [:create, :destroy]
+  resources :game do
+    resources :comments
+  end
 end

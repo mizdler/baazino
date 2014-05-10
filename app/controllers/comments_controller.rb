@@ -24,19 +24,12 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
-    @comment = Comment.new(comment_params)
-    @comment.user = current_user
-
-    respond_to do |format|
-      if @comment.save
-        format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @comment }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @comment.errors, status: :unprocessable_entity }
-      end
-    end
+    @game = Game.find params[:game_id]
+    @comment = @game.comments.create(params[:comment].permit(:body))
+    redirect_to @game
   end
+
+  
 
   # PATCH/PUT /comments/1
   # PATCH/PUT /comments/1.json
@@ -55,13 +48,13 @@ class CommentsController < ApplicationController
   # DELETE /comments/1
   # DELETE /comments/1.json
   def destroy
-    @comment.destroy
-    respond_to do |format|
-      format.html { redirect_to comments_url }
-      format.json { head :no_content }
+      @comment = Comment.find(params[:id])
+      if @comment.destroy
+        render :json => @comment, :status => :ok
+      else
+        render :js => "alert('error deleting comment');"
+      end
     end
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_comment

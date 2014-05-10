@@ -3,41 +3,41 @@
   <div class="detail col-lg-12">
         <div class="download col-lg-9" >
           <div class="clo-lg-3"></div>
-          <div class="clo-lg-6">
+          	<div class="clo-lg-6">
             
-            <div id = "gmn">
-              <h2><%= @game.game_name %></h2>
-            </div>
-            
-            <div id = "devn">
-              <h4>برنامه نویس: <%= @game.developer.user.email %></h4>
-            </div>
-            
-            <div id = "typ">
-              <a href = "#"> action</a>
-            </div>              
-            
-            <div id = "dlbt">
-              <div class="btn-group">
-                <button type="button" class="btn btn-success col-log-4" id = "wishlist"> add to wish list</button>
-                <%button_to "دانلود",@game.install_file.url(:original, false), class:"btn btn-success clo-lg-4"%>
-              </div>
-            </div>
-            
-            <div class="price">
-				قیمت:<%= @game.price %> تومان
-			</div>
-			<div class="version">
-				نسخه:<%= @game.version %>
-			</div>
-			<div class="line col-lg-8 col-lg-offset-2"></div>
+	            <div id = "gmn">
+	              	<h2><%= @game.game_name %></h2>
+	            </div>
+	            
+	            <div id = "devn">
+	              	<h4>برنامه نویس: <%= @game.developer.user.email %></h4>
+	            </div>
+	            
+	            <div id = "typ">
+	              	<a href = "#"> action</a>
+	            </div>              
+	            
+	            <div id = "dlbt">
+	              	<div class="btn-group">
+	                	<button type="button" class="btn btn-success col-log-4" id = "wishlist"> add to wish list</button>
+	                	<%button_to "دانلود",@game.install_file.url(:original, false), class:"btn btn-success clo-lg-4"%>
+	              	</div>
+	            </div>
+	            
+	            <div class="price">
+					قیمت:<%= @game.price %> تومان
+				</div>
+				<div class="version">
+					نسخه:<%= @game.version %>
+				</div>
+				<div class="line col-lg-8 col-lg-offset-2"></div>
 
-            <div id = "ranking">
-            	<%= link_to "Upvote", like_game_path(@game), method: :put %>
-				<%= link_to "Downvote", dislike_game_path(@game), method: :put %>
-				<%= @game.get_likes.size %> 
-            </div>
-          </div>
+	            <div id = "ranking">
+	            	<%= link_to "Upvote", like_game_path(@game), method: :put %>
+					<%= link_to "Downvote", dislike_game_path(@game), method: :put %>
+					<%= @game.get_likes.size %> 
+	            </div>
+          	</div>
         </div>
 
         <div class="col-lg-3 ">
@@ -45,5 +45,34 @@
 				<%= image_tag @game.cover_photo.url , class:"image" %>
 			<% end%>
         </div>
-  </div>
+  		</div>
+
+	  	
+		<div class="comments">
+	  		<h2>Comments</h2>
+				<% @game.comments.each do |comment| %>
+				    <p>
+				        <strong>Commenter:</strong>
+				    </p>
+				    <p>
+				        <strong>Comment:</strong>
+				        <%= comment.body %>
+				    </p>
+				<% end %>
+
+				<h2>Add a comment:</h2>
+				<%= form_for([@game, @game.comments.build]) do |f| %>
+				    <p>
+				        <%= f.label :commenter %><br />
+				    </p>
+				    <p>
+				        <%= f.label :body %><br />
+				        <%= f.text_area :body %>
+				    </p>
+				    <p>
+				        <%= f.submit %>
+				    </p>
+				<% end %>
+		</div>
+  	</div>
 <div>
