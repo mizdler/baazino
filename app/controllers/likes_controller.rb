@@ -25,6 +25,7 @@ class LikesController < ApplicationController
   # POST /likes.json
   def create
     @like = Like.new(like_params)
+    @like.user = current_user;
 
     respond_to do |format|
       if @like.save

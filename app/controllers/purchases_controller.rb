@@ -1,6 +1,9 @@
 class PurchasesController < ApplicationController
   before_action :set_purchase, only: [:show, :edit, :update, :destroy]
 
+  def purchased_games
+    @purchaseds = current_user.purchases
+  end
   # GET /purchases
   # GET /purchases.json
   def index
