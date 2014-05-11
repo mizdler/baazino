@@ -245,3 +245,37 @@ body{
 	font-size: 25pt;
 	color: red;
 }
+
+#ne_user
+{
+	direction: rtl;
+}
+
+.forget
+{
+	color: rgb(255 , 255 , 255);
+}
+.sgnbt
+{
+	border-left: 0px;
+	border-right: 0px;
+}
+.ed_user
+{
+	margin: 20px;
+	box-shadow: 0 0 1px 1px rgba(0 , 0,0,0.1);
+	padding-bottom: 1px;
+}
+#edit
+{
+	background-color: rgb(255 , 255 , 255);
+	margin-top: 20px;
+	border-radius: 6px;
+	direction: rtl;
+}
+
+.content
+{
+	margin: 10px;
+
+}
