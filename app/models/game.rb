@@ -16,6 +16,6 @@ class Game < ActiveRecord::Base
   validates_attachment_content_type :cover_photo, :content_type => /\Aimage\/.*\Z/
 
   def self.search(query)
-    where("game_name like ?", "%#{query}%")
+    where("game_name like ? or description like ?", "%#{query}%", "%#{query}%")
   end
 end
