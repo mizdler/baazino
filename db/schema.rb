@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140510182137) do
+ActiveRecord::Schema.define(version: 20140513135533) do
 
   create_table "banks", force: true do |t|
     t.string   "bank_name"
@@ -131,6 +131,7 @@ ActiveRecord::Schema.define(version: 20140510182137) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "mobile"
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"

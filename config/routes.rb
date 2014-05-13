@@ -42,6 +42,7 @@ Baazino::Application.routes.draw do
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+  #  get 'games/:id/download' => 'game#dowload', as: :download
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
@@ -90,6 +91,7 @@ Baazino::Application.routes.draw do
     member do
       put "like", to: "games#upvote"
       put "dislike", to: "games#downvote"
+      put "download", to: "games#download"
     end
   end
   resources :game do

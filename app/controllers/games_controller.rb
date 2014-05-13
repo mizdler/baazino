@@ -1,12 +1,10 @@
 class GamesController < ApplicationController
   before_action :set_game, only: [:show, :edit, :update, :destroy]
 
-  def all_top
-
-  end
-
-  def all_new
-
+  def download
+    @game = Game.find(params[:id])
+    Purchase.create(:game => @game, :price=> @game.price, :user=> current_user)
+    redirect_to @game.install_file.url
   end
 
   def upvote

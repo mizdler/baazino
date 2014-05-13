@@ -28,6 +28,7 @@ class PurchasesController < ApplicationController
   # POST /purchases.json
   def create
     @purchase = Purchase.new(purchase_params)
+    #@purchase.user = current_user;
 
     respond_to do |format|
       if @purchase.save
