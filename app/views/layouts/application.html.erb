@@ -22,8 +22,13 @@
 						<li>
 							<a href="#">تماس با ما</a>
 						</li>
+						<li>
+						<%= form_tag(games_path, :method => "get", id: "search-form") do %>
+						  <%= text_field_tag :search, params[:search], placeholder: "جستجو" %>
+						  <%= submit_tag "بگرد", :name => nil %>
+						<% end %>
+						</li>
 					</ul>
-
 					<div class="account-wrapper">
 						<ul id="user-account-nav">
 							<% if user_signed_in? %>

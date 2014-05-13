@@ -27,7 +27,14 @@ class GamesController < ApplicationController
   # GET /games
   # GET /games.json
   def index
-    @games = Game.all
+    if !params[:search]
+      @games = Game.all
+      @isFirstPage = true
+    else
+      @games = Game.search(params[:search]).order("created_at DESC")
+      @isFirstPage = false
+    end
+
   end
 
   # GET /games/1
@@ -104,5 +111,5 @@ class GamesController < ApplicationController
       params.require(:game).permit(:game_name, :version, :create_date, :release_date, :description, :developer_id, :game_info_id, :game_genre_id, :review_id, :price, :install_file, :platform, :support_version, :content, :cover_photo)
     end
 
-    
+
 end

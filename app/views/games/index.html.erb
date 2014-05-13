@@ -9,7 +9,7 @@
 			width : 750,
 			height : 300
 		});
-	}); 
+	});
 </script>
 <div class="siteName">
 	<div class="siteNameTitle">
@@ -17,9 +17,10 @@
 	</div>
 	اولین سایت تخصصی بازی برای اندروید و آیفون
 </div>
+<%if @isFirstPage%>
 <section class="container">
 	<div id="slider">
-		<% Game.all.each do |game| %>
+		<% @games.each do |game| %>
 		<%= image_tag(game.cover_photo ) %>
 		<%end%>
 	</div>
@@ -118,4 +119,40 @@
 	<div class="more">
 		<a href="/dowloadedgames">بیشتر</a>
 	</div>
+
+
+	<% else %>
+
+		<div class="receptacle">
+			<div class="title">
+				<h2>اینارو پیدا کردیم</h2>
+			</div>
+
+			<% @games.each do |game| %>
+			<%= link_to game, :class => "appLink" do %>
+			<article class="app">
+				<div class= "coverPhoto">
+					<% if game.cover_photo %>
+					<%= image_tag game.cover_photo.url %>
+					<% end%>
+				</div>
+				<div class="gameName">
+					<%= game.game_name %>
+				</div>
+				<div class="cat">
+					<%= game.description %>
+				</div>
+				<div class="priceMain">
+					<% if game.price!=0 %><%= game.price %> تومان<%else%>رایگان<%end%>
+				</div>
+			</article>
+			<% end %>
+			<% end %>
+			<div class="more">
+				<a href="/topgames">بیشتر</a>
+			</div>
+
+		</div>
+
+	<% end %>
 </div>
