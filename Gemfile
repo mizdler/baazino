@@ -43,6 +43,8 @@ gem 'acts_as_votable', '~> 0.9.0'
 gem 'acts_as_commentable'
 gem 'simple_form'
 
+gem 'sunspot_rails'
+gem 'sunspot_solr'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
