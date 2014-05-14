@@ -25,7 +25,9 @@ class CommentsController < ApplicationController
   # POST /comments.json
   def create
     @game = Game.find params[:game_id]
-    @comment = @game.comments.create(params[:comment].permit(:body))
+    @comment = @game.comments.new(params[:comment].permit(:body))
+    @comment.user_id = current_user.id
+    @comment.save
     redirect_to @game
   end
 

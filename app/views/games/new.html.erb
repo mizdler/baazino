@@ -19,21 +19,18 @@
 
 								<ul>
 									<li>
-										<a href="#step-1"> <label class="stepNumber">1</label> <span class="stepDesc"> Game </span> </a>
+										<a href="#step-1"> <label class="stepNumber">1</label> <span class="stepDesc"> اطلاعات بازی </span> </a>
 									</li>
 									<li>
-										<a href="#step-2"> <label class="stepNumber">2</label> <span class="stepDesc"> Game Info </span> </a>
+										<a href="#step-2"> <label class="stepNumber">2</label> <span class="stepDesc"> توضیحات </span> </a>
 									</li>
 									<li>
-										<a href="#step-3"> <label class="stepNumber">3</label> <span class="stepDesc"> Review </span> </a>
-									</li>
-									<li>
-										<a href="#step-4"> <label class="stepNumber">4</label> <span class="stepDesc"> Upload </span> </a>
+										<a href="#step-3"> <label class="stepNumber">3</label> <span class="stepDesc"> آپلود </span> </a>
 									</li>
 								</ul>
 
 								<div id="step-1">
-									<h2 class="StepTitle">game info</h2>
+									<h2 class="StepTitle">اطلاعات بازی</h2>
 									<div class="panel panel-cascade">
 										<div class="panel-body">
 
@@ -42,7 +39,7 @@
 												<div class="col-lg-10 col-md-9 ">
 													<%=f.text_field :game_name, class: "form-control form-cascade-control input-small" %>
 												</div>
-												<label class="col-lg-1 col-md-1 control-label"> نام بازی :</label>
+												<label class="col-lg-1 col-md-1 control-label"> نام بازی </label>
 
 											</div>
 
@@ -51,7 +48,7 @@
 												<div class="col-lg-10 col-md-9">
 													<%=f.text_field :version , class: "form-control form-cascade-control input-small" %>
 												</div>
-												<label class="col-lg-1 col-md-1 control-label">ورژن :</label>
+												<label class="col-lg-1 col-md-1 control-label">ورژن </label>
 											</div>
 
 											<div class="form-group">
@@ -59,7 +56,7 @@
 												<div class="col-lg-10 col-md-9">
 													<%=f.text_field :price , class: "form-control form-cascade-control input-small" %>
 												</div>
-												<label class="col-lg-1 col-md-1 control-label">قیمت :</label>
+												<label class="col-lg-1 col-md-1 control-label">قیمت </label>
 											</div>
 
 											<div class="form-group">
@@ -67,55 +64,31 @@
 												<div class="col-lg-10 col-md-9">
 													<%=f.text_area :description , class: "form-control form-cascade-control input-small" %>
 												</div>
-												<label class="col-lg-1 col-md-1 control-label">توضیحات :</label>
+												<label class="col-lg-1 col-md-1 control-label">توضیحات </label>
 											</div>
 
 										</div>
 									</div>
 								</div>
-
-								<%= f.fields_for :game_info do |g| %>
-								<div id="step-2">
-									<h2 class="StepTitle">Game info:</h2>
-
-									<div class="form-group">
-										<label class="col-lg-2 col-md-3 control-label">Version support:</label>
-										<div class="col-lg-10 col-md-9">
-											<%= select_tag(:platform, options_from_collection_for_select(find_platforms, "id", "name") ,  class:"chosen-container chosen-container-multi" ,
-											style:"width: 350px;")%>
-										</div>
-									</div>
-									<div class="panel panel-cascade">
-										<div class="form-group">
-											<label class="col-lg-2 col-md-3 control-label">Version support:</label>
-											<div class="col-lg-10 col-md-9">
-												<%= g.text_field :version_support ,class:"form-control form-cascade-control" %>
-											</div>
-										</div>
-									</div>
-
-								</div>
-
-								<% end %>
 
 								<%= f.fields_for :review do |r| %>
-								<div id="step-3">
-									<h2 class="StepTitle">Review:</h2>
+								<div id="step-2">
+									<h2 class="StepTitle">توضیحات</h2>
 									<div class="panel panel-cascade">
 										<div class="form-group">
-											<label class="col-lg-2 col-md-3 control-label">Version suport:</label>
-											<div class="col-lg-10 col-md-9">
+
+											<div class="col-lg-9 col-md-9 col-lg-offset-2 col-md-offset-1">
 												<%= r.text_area :content ,class:"form-control form-cascade-control" ,rows:"3" ,style:"margin: 0px -0.671875px 0px 0px; width: 100%; height: 500px;"%>
 											</div>
+											<label class="col-lg-1 col-md-2 control-label">توضیحات</label>
 										</div>
 									</div>
-
 								</div>
 
 								<% end %>
 
-								<div id="step-4">
-									<h2 class="StepTitle">Finish</h2>
+								<div id="step-3">
+									<h2 class="StepTitle">پایان</h2>
 									<div class="panel panel-cascade">
 										<div class="panel-heading">
 											<h3 class="panel-title"> Upload your APK file hear </h3>

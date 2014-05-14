@@ -39,7 +39,7 @@ class GamesController < ApplicationController
   # GET /games/1.json
   def show
     @game = Game.find params[:id]
-    @comment = @game.comments.new
+    @comment = Comment.new
   end
 
   # GET /games/new

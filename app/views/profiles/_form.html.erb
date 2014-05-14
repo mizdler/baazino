@@ -1,85 +1,85 @@
-
-<div class="col-lg-12 ">
-	<div class="row profile">
-		<aside class="profile-info col-lg-9">
-	      	<section class="panel">
-	          	<div class="bio-graph-heading">
-	              	Aliquam ac magna metus. Nam sed arcu non tellus fringilla fringilla ut vel ispum. Aliquam ac magna metus.
-	          	</div>
-	          	<div class="panel-body bio-graph-info">
-	                  
-	                    <%= simple_form_for(@profile ,:html => {:class =>'form-horizontal'})  do |f| %>
-	                      <div class="form-group">
-								<div class="col-lg-6 col-lg-offset-4">
-									<%= f.text_field :firstname , class:"form-control form-cascade-control input-small"  %>
-								</div>
-								<label  class="col-lg-2 control-label">نام</label>
-	                          
-	                      </div>
-						  
-	                      <div class="form-group">
-							<div class="col-lg-6 col-lg-offset-4">
-								<%= f.text_field :lastname , class:"form-control form-cascade-control input-small"  %>
-								</div>
-								<label  class="col-lg-2 control-label">نام خانوادگی</label>
-								
-	                      </div>
-						  
-	                      <div class="form-group">
-							<div class="col-lg-6 col-lg-offset-4">
-	                              <input type="text" class="form-control form-cascade-control input-small" id="email" placeholder=" ">
-	                          </div>
-	                          <label  class="col-lg-2 control-label">ایمیل</label>
-	                          
-	                      </div>
-						  
-	                      <div class="form-group">
-						  <div class="col-lg-6 col-lg-offset-4">
-	                              <input type="text" class="form-control form-cascade-control input-small" id="mobile" placeholder=" ">
-	                          </div>
-	                          <label  class="col-lg-2 control-label">شماره موبایل</label>
-	                          
-	                      </div>
-						  
-
-	                      <div class="form-group">
-                          	<div class="col-lg-6 col-lg-offset-4">
-                          		<%= f.file_field :install_file , class:"file-pos" %>
-                          	</div>
-						  	<label  class="col-lg-2 control-label">Change Avatar</label>
-	                              
-                      	</div>
-                      	<div class="form-group">
-	                          <div class="col-lg-offset-2 col-lg-10">
-	                              <%= f.submit "save" , class:"btn btn-success"%>
-	                              <button type="button" class="btn btn-default">Cancel</button>
-	                          </div>
-	                      </div>
-
-	                  <%end%>
-	                  	
+<aside class="profile-info col-lg-9">
+    <section class="panel">
+        <div class="bio-graph-heading">
+            Aliquam ac magna metus. Nam sed arcu non tellus fringilla fringilla ut vel ispum. Aliquam ac magna metus.
+        </div>
+        <div class="panel-body bio-graph-info">
+            <%= simple_form_for(@profile ,:html => {:class =>'form-horizontal'})  do |f| %>
+	            <div class="form-group">
+	                <div class="col-lg-6 col-lg-offset-4">
+	                    <%= f.text_field :firstname , class:"form-control form-cascade-control input-small"  %>
+	                </div>
+	                <label  class="col-lg-2 control-label">نام</label>
 	            </div>
-	          </section>
-			  
-	      </aside>
-			<aside class="profile-nav col-lg-3">
-	          <section class="panel">
-	              <div class="user-heading round">
-	                  <%= link_to '#' do %>
-	                      <%image_tag('empty_avatar.jpg')%>
-	                  <% end %>
-	                  <h1>Jonathan Smith</h1>
-	                  <p>jsmith@flatlab.com</p>
-	              </div>
+	            <div class="form-group">
+	                <div class="col-lg-6 col-lg-offset-4">
+	                    <%= f.text_field :lastname , class:"form-control form-cascade-control input-small"  %>
+	                </div>
+	                <label  class="col-lg-2 control-label">نام خانوادگی</label>
+	            </div>
+	            <div class="form-group" style="disabled: true;">
+	                <div class="col-lg-6 col-lg-offset-4">
+	                	<p class="form-control form-cascade-control input-small">
+	                    	<%=current_user.email%>
+	                    </p>
+	                </div>
+	                <label  class="col-lg-2 control-label">ایمیل</label>
+	            </div>
+	            <div class="form-group">
+	                <div class="col-lg-6 col-lg-offset-4">
+	                    <%= f.text_field :mobile , class:"form-control form-cascade-control input-small"  %>
+	                </div>
+	                <label  class="col-lg-2 control-label">شماره موبایل</label>
+	            </div>
+	            <div class="form-group">
+	                <div class="col-lg-6 col-lg-offset-4">
+	                    <%= f.file_field :avatar , class:"file-pos" %>
+	                </div>
+	                <label  class="col-lg-2 control-label">تغییر آواتار</label>
+	            </div>
+	            <div class="form-group">
+	                <div class="col-lg-offset-2 col-lg-10">
+	                    <%= f.submit "ذخیره" , class:"btn btn-success"%>
+	                </div>
+	            </div>
+            <%end%>
+        </div>
+    </section>
 
-	              <ul class="nav nav-pills nav-stacked">
-	                  <li><a href="profile.html"> <i class="glyphicon glyphicon-user"></i> Profile</a></li>
-	                  <li><a href="profile-activity.html"  > <i class="icon-calendar"></i> Recent Activity <span class="label label-danger pull-right r-activity" style="float:left !important">9</span></a></li>
-	                  <li  class="active"><a href="profile-edit.html"> <i class="icon-edit"></i> Edit profile</a></li>
-	              </ul>
+    <section>
+        <div class="panel panel-primary">
+            <div class="panel-heading"><h2> تغییر پسورد </h2></div>
+            <div class="panel-body">
+            	<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class =>'form-horizontal', :method => :put }) do |f| %>
+                    <div class="form-group">
+                        <div class="col-lg-6 col-lg-offset-4">
+                            <%= f.password_field :current_password , class:"form-control form-cascade-control input-small" %>
+                        </div>
+                        <label  class="col-lg-2 control-label">پسورد کنکونی</label>
+                    </div>
 
-	          </section>
-	      </aside>
-	      
-	  </div>
-</div>
+                    <div class="form-group">
+                        <div class="col-lg-6 col-lg-offset-4">
+                            <%= f.password_field :password, :autocomplete => "off" , class:"form-control form-cascade-control input-small"%>
+                        </div>
+                        <label  class="col-lg-2 control-label">پسورد جدید</label>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-lg-6 col-lg-offset-4">
+                             <%= f.password_field :password_confirmation , class:"form-control form-cascade-control input-small" %>
+                        </div>
+                        <label  class="col-lg-2 control-label">تکرار پسورد</label>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-lg-offset-2 col-lg-10">
+                        	<%= f.submit "ذخیره" , class: "btn btn-info" %>
+                        </div>
+                    </div>
+                <%end%>
+            </div>
+        </div>
+    </section>
+</aside>
+
