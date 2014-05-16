@@ -32,8 +32,8 @@ class DevelopersController < ApplicationController
 
     respond_to do |format|
       if @developer.save
-        format.html { redirect_to @developer, notice: 'Developer was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @developer }
+        format.html { redirect_to current_user.profile, notice: 'Developer was successfully created.' }
+        format.json { render action: 'show', status: :created, location: current_user.profile}
       else
         format.html { render action: 'new' }
         format.json { render json: @developer.errors, status: :unprocessable_entity }
