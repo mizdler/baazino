@@ -1,5 +1,60 @@
-<h1>New profile</h1>
+<style type="text/css">
+body {
+    color: #797979;
+    background: #f1f2f7;
+    font-family: 'Open Sans', sans-serif;
+    padding: 0px !important;
+    margin: 0px !important;
+    font-size:13px;
+    direction:rtl;
+}
+</style>
 
-<%= render 'form' %>
+<div class="col-lg-12 ">
+	<div class="row profile">
+		<%= render 'form' %>
+		<aside class="profile-nav col-lg-3">
+	      	<section class="panel">
+	          	<div class="user-heading round">
+	              	<%= link_to '#' do %>
+	              		<% if @profile.avatar %>
+							<%= image_tag @profile.avatar.url %>
+						<%else%>
+							<%image_tag('empty_avatar.jpg')%>
+						<% end%>
+	              	<% end %>
+	              	<% if @profile.firstname %>
+	              		<h1><%=@profile.firstname%> <%=@profile.lastname%></h1>
+	              	<%end%>
+	              	<p><%=current_user.email%></p>
+	          	</div>
 
-<%= link_to 'Back', profiles_path %>
+	      		<ul class="nav nav-pills nav-stacked">
+	              	<li >
+                    	<%= link_to profile_path(@profile) do %> 
+                    		<i class="icon-user"></i> 
+                    			پروفایل
+                    	<%end%>
+                    </li class="active">
+
+                    <li>
+                    	<%= link_to edit_profile_path(@profile) do %>
+                    		<i class="icon-edit"></i>
+                    		ویرایش پروفایل
+                    	<%end%>
+                    </li>
+
+	              	<li>
+                        <% if current_user.developer.nil?%>
+                            <%= link_to 'برناهه نویس هستید؟', new_developer_path %>
+                        <% else %>
+                            <%= link_to 'تنظیمات برنامه نویس', edit_developer_path(current_user.developer) %>
+                        <% end %>
+                    </li>
+
+	          	</ul>
+			</section>
+	  	</aside>
+		      
+	</div>
+</div>

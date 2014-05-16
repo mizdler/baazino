@@ -1,8 +1,10 @@
-body{
-	background : url('bg_main.jpg');
-	background-repeat: repeat-x;
-	background-color: rgb(106, 165, 195);
-	font-family: Adobe Arabic;
+
+body 
+{
+background-color: #54364a;
+background-size: cover;
+background-image:url(../images/a.jpg);
+font-family: Adobe Arabic;
 }
 .menu {
 	list-style: none;

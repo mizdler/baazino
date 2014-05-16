@@ -11,40 +11,73 @@ body {
 </style>
 <div class="col-lg-12">
     <div class="row profile">
-		<aside class="profile-info col-lg-9">
-            
-            <section class="panel">
-                <div class="bio-graph-heading">
-                    Aliquam ac magna metus. Nam sed arcu non tellus fringilla fringilla ut vel ispum. Aliquam ac magna metus.
-                </div>
-                <div class="panel-body bio-graph-info">
-                    <h1>Bio Graph</h1>
-                    <div class="row">
-                    	<div class="bio-row">
-                            <p><span>نام خانوادگی </span>: <%= @profile.lastname %></p>
-                        </div>
-
-                        <div class="bio-row">
-                            <p><span>نام </span>: <%= @profile.firstname %></p>
-                        </div>
-
-                        <div class="bio-row">
-                            <p><span>تلفن </span>: <%= @profile.mobile %></p>
-                        </div>
-
-                        <div class="bio-row">
-                            <p><span>ایمیل </span>: <%= @profile.user.email %></p>
-                        </div>
-                        
+        <div class="col-lg-9">
+		      <aside class="profile-info col-lg-12">
+                <section class="panel">
+                    <div class="bio-graph-heading">
+                        <h1>اطلاعات کاربری</h1>
                     </div>
-                </div>
-            </section>
-            <section>
-                <div class="row">
-                </div>
-            </section>
-        </aside>
+                    <div class="panel-body bio-graph-info">
+                        <h1>اطلاعات کاربری</h1>
+                        <div class="row">
+                        	<div class="bio-row">
+                                <p><span>نام خانوادگی </span>: <%= @profile.lastname %></p>
+                            </div>
 
+                            <div class="bio-row">
+                                <p><span>نام </span>: <%= @profile.firstname %></p>
+                            </div>
+
+                            <div class="bio-row">
+                                <p><span>تلفن </span>: <%= @profile.mobile %></p>
+                            </div>
+
+                            <div class="bio-row">
+                                <p><span>ایمیل </span>: <%= @profile.user.email %></p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="row">
+                    </div>
+                </section>
+            </aside>
+            <% if !current_user.developer.nil?%>
+                <aside class="profile-info col-lg-12">
+                    
+                    <section class="panel">
+                        <div class="bio-graph-heading">
+                            <h1>مشخصات برنامه نویس</h1>
+                        </div>
+                        <div class="panel-body bio-graph-info">
+                            <h1>مشخصات برنامه نویس</h1>
+                            <div class="row">
+                                <div class="bio-row">
+                                    <p><span>نام کاربری </span>: <%= current_user.developer.developer_account_id %></p>
+                                </div>
+
+                                <div class="bio-row">
+                                    <p><span>کد ملی </span>: <%= current_user.developer.ssid %></p>
+                                </div>
+
+                                <div class="bio-row">
+                                    <p><span>تلفن </span>: <%= current_user.developer.tel %></p>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="row">
+                        </div>
+                    </section>
+                </aside>
+
+            <%end%>
+
+        </div>
 		<aside class="profile-nav col-lg-3">
             <section class="panel">
 
@@ -67,20 +100,29 @@ body {
                     <li class="active">
                     	<%= link_to profile_path(@profile) do %> 
                     		<i class="icon-user"></i> 
-                    			Profile
+                    			پروفابل
                     	<%end%>
                     </li>
 
                     <li>
                     	<%= link_to edit_profile_path(@profile) do %>
                     		<i class="icon-edit"></i>
-                    		Edit profile
+                    		ویرایش پروفایل
                     	<%end%>
+                    </li>
+                    <li>
+                        <% if current_user.developer.nil?%>
+                            <%= link_to 'برناهه نویس هستید؟', new_developer_path %>
+                        <% else %>
+                            <%= link_to 'تنظیمات برنامه نویس', edit_developer_path(current_user.developer) %>
+                        <% end %>
                     </li>
 
                 </ul>
             </section>
         </aside>
         
+
+
 	</div>
 </div>
