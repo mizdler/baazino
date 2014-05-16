@@ -3,12 +3,16 @@ class GamesController < ApplicationController
 
   def download
     @game = Game.find(params[:id])
-    Purchase.create(:game => @game, :price=> @game.price, :user=> current_user)
-    if(!@game.downloads_num)
-      @game.downloads_num = 0
+
+    if(!Purchase.where(game_id: @game.id, user_id: current_user.id).first)
+      Purchase.create(:game => @game, :price=> @game.price, :user=> current_user)
+      if(!@game.downloads_num)
+        @game.downloads_num = 0
+      end
+      @game.downloads_num += 1
+      @game.update(:downloads_num => @game.downloads_num)
     end
-    @game.downloads_num += 1
-    @game.update(:downloads_num => @game.downloads_num)
+
     redirect_to @game.install_file.url
   end
 
