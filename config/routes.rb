@@ -1,6 +1,5 @@
 Baazino::Application.routes.draw do
 
-  get 'profile' => 'profiles#show'
   resources :profiles
 
   resources :likes

@@ -40,7 +40,7 @@
 							</li>
 
 							<li>
-								<%= link_to profile_path do%>
+								<%= link_to profile_path(current_user.profile.id) do%>
 									<% if current_user.profile %>
 										<%if current_user.profile.avatar %>
 											<%= image_tag current_user.profile.avatar.url  , id:"profile_image"%>
@@ -50,7 +50,7 @@
 									<% end%>
 								<%end%>
 							</li>
-							
+
 							<% else %>
 							<li>
 								<a href="#" data-toggle="modal" data-target="#basicModal" style="text-decoration:none;float: left">
