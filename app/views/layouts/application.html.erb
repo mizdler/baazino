@@ -33,7 +33,7 @@
 						<ul id="user-account-nav">
 							<% if user_signed_in? %>
 							<li>
-								<%= link_to 'پروفایل', edit_user_registration_path%>
+								<%= link_to 'پروفایل', 'profile'%>
 							</li>
 							<% if !current_user.developer.nil? %>
 							<li>

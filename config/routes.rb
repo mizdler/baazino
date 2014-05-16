@@ -23,7 +23,8 @@ Baazino::Application.routes.draw do
 
   resources :purchases
 
-  devise_for :users
+  devise_for :users, :controllers => {:registrations => "registrations"}
+
   resources :games
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -39,6 +40,8 @@ Baazino::Application.routes.draw do
      get 'topgames' => 'games#all_top'
      get 'newgames' => 'games#all_new'
      get 'dowloadedgames' => 'games#all_downloaded'
+
+     get 'profile' => 'profiles#show'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
