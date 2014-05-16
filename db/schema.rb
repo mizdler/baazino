@@ -70,8 +70,32 @@ ActiveRecord::Schema.define(version: 20140513135533) do
 
   add_index "game_rates", ["game_id"], name: "index_game_rates_on_game_id"
 
-# Could not dump table "games" because of following NoMethodError
-#   undefined method `[]' for nil:NilClass
+  create_table "games", force: true do |t|
+    t.string   "game_name"
+    t.string   "version"
+    t.string   "description"
+    t.integer  "downloads_num"
+    t.integer  "developer_id"
+    t.integer  "genre_id"
+    t.integer  "platform_id"
+    t.integer  "review_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "price"
+    t.string   "install_file_file_name"
+    t.string   "install_file_content_type"
+    t.integer  "install_file_file_size"
+    t.datetime "install_file_updated_at"
+    t.string   "cover_photo_file_name"
+    t.string   "cover_photo_content_type"
+    t.integer  "cover_photo_file_size"
+    t.datetime "cover_photo_updated_at"
+  end
+
+  add_index "games", ["developer_id"], name: "index_games_on_developer_id"
+  add_index "games", ["genre_id"], name: "index_games_on_genre_id"
+  add_index "games", ["platform_id"], name: "index_games_on_platform_id"
+  add_index "games", ["review_id"], name: "index_games_on_review_id"
 
   create_table "gates", force: true do |t|
     t.string   "bank_name"

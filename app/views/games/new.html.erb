@@ -51,6 +51,23 @@
 												<label class="col-lg-1 col-md-1 control-label">ورژن </label>
 											</div>
 
+
+					                        <div class="form-group">
+												<div class="col-lg-1 col-md-2"></div>
+												<div class="col-lg-10 col-md-9">
+						                          	<%= f.select(:platform_id, options_from_collection_for_select(Platform.all, "id", "name"), class:"form-control form-cascade-control input-small", style:"width: 350px;")%>
+					                         </div>
+					                         <label class="col-lg-1 col-md-1 control-label">پلتفرم</label>
+						                    </div>
+
+					                        <div class="form-group">
+												<div class="col-lg-1 col-md-2"></div>
+												<div class="col-lg-10 col-md-9">
+						                          	<%= f.select(:genre_id, options_from_collection_for_select(Genre.all, "id", "name"), class:"form-control form-cascade-control input-small" ,style:"width: 350px;")%>
+					                         </div>
+					                         <label class="col-lg-1 col-md-1 control-label">ژانر</label>
+						                    </div>
+
 											<div class="form-group">
 												<div class="col-lg-1 col-md-2"></div>
 												<div class="col-lg-10 col-md-9">

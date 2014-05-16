@@ -12,11 +12,6 @@ module GamesHelper
     Game.order(:created_at => :desc)
   end
 
-
-  def find_platforms
-    Platform.all
-  end
-
   def top_rates
     Game.joins(:game_rate).order("game_rates.total desc").limit(4)
   end

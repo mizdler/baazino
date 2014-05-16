@@ -3,13 +3,12 @@ class CreateGames < ActiveRecord::Migration
     create_table :games do |t|
       t.string :game_name
       t.string :version
-      t.date :create_date
-      t.date :release_date
       t.string :description
+      t.integer :downloads_num
       t.belongs_to :developer, index: true
-      t.belongs_to :geme_info, index: true
-      t.belongs_to :geme_genre, index: true
-      t.belongs_to :game_review, index: true
+      t.belongs_to :genre, index: true
+      t.belongs_to :platform, index: true
+      t.belongs_to :review, index: true
 
       t.timestamps
     end
