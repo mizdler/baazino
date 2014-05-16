@@ -42,7 +42,6 @@ Baazino::Application.routes.draw do
    root 'games#index'
 
   # Example of regular route:
-     get 'devgames' => 'developers#devgames'
      get 'purchased_games' => 'purchases#purchased_games'
 
      get 'topgames' => 'games#all_top'

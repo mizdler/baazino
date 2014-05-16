@@ -32,20 +32,31 @@
 					<div class="account-wrapper">
 						<ul id="user-account-nav">
 							<% if user_signed_in? %>
+
 							<li>
-								<%= link_to 'پروفایل', profile_path%>
+								<%= link_to destroy_user_session_path do%>
+									<%= image_tag "sign_out.png" , id:"sign_out"%>
+								<%end%>
 							</li>
-							<% if !current_user.developer.nil? %>
+
 							<li>
-								<%= link_to 'پنل توسعه دهنده', devgames_path%>
+								<%= link_to profile_path do%>
+									<% if current_user.profile %>
+										<%if current_user.profile.avatar %>
+											<%= image_tag current_user.profile.avatar.url  , id:"profile_image"%>
+										<%end%>
+									<%else%>
+										<%= image_tag('empty_avatar.jpg')%>
+									<% end%>
+								<%end%>
 							</li>
-							<% end %>
-							<li>
-								<%= link_to 'خروج', destroy_user_session_path%>
-							</li>
+							
 							<% else %>
 							<li>
-								<a href="#" data-toggle="modal" data-target="#basicModal" style="text-decoration:none;float: left">ورود</a>
+								<a href="#" data-toggle="modal" data-target="#basicModal" style="text-decoration:none;float: left">
+									<%= image_tag "sign_in.png" , id:"sign_out"%>
+								</a>
+
 
 								<div class="modal fade" id="basicModal" tabindex="2" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
 									<div class="modal-dialog">
@@ -65,7 +76,9 @@
 							</li>
 
 							<li>
-								<%= link_to "ثبت نام", new_registration_path(resource_name) %>
+								<%= link_to new_registration_path(resource_name) do%>
+									<%= image_tag "sign_up.png" , id:"sign_out"%>
+								<%end%>
 							</li>
 							<% end %>
 						</ul><!--/ #user-account-nav-->

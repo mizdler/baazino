@@ -1,9 +1,7 @@
 class DevelopersController < ApplicationController
   before_action :set_developer, only: [:show, :edit, :update, :destroy]
 
-  def devgames
-    @developer_games = current_user.developer.games
-  end
+  
   # GET /developers
   # GET /developers.json
   def index

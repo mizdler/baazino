@@ -1,0 +1,35 @@
+<%= javascript_include_tag "developers", media: "all", "data-turbolinks-track" => true %>
+
+<div align="left" style="margin-left: 10px">
+  <%= link_to 'آپلود بازی جدید', new_game_path, class: "btn btn-success", style: "width: 10%; color: white;float:right;" %>
+</div>
+<br />
+<div class="col-lg-12" style="margin-top:5px;">
+  <table id="devgames_table" class="display">
+    <thead>
+      <tr>
+        <th style="text-align: right"></th>
+        <th style="text-align: right">نام بازی</th>
+        <th style="text-align: right">تاریخ انتشار</th>
+        <th style="text-align: right">تعداد دانلود</th>
+        <th style="text-align: right">امتیاز کل</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% devgames.each do |game| %>
+        <tr>
+          <th >
+            <% if game.cover_photo %>
+              <%= image_tag game.cover_photo.url , :style =>"width: 60px;height: 60px;" %>
+            <% end%>
+          </th>
+          <td><%= link_to game.game_name, edit_game_path(game) %></td>
+          <td><%= game.created_at %></td>
+          <td><%= game.downloads_num %></td>
+          <td><%= game.game_rate.total %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

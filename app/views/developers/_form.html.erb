@@ -1,91 +1,100 @@
-<style type="text/css">
-    body {
-    color: #797979;
-    background: #f1f2f7;
-    font-family: 'Open Sans', sans-serif;
-    padding: 0px !important;
-    margin: 0px !important;
-    font-size:13px;
-    direction:rtl;
-    }
-</style>
+
 <div class="col-lg-12">
     <div class="row profile">
-        <aside class="profile-info col-lg-9">
-            <section class="panel">
-                <div class="bio-graph-heading">
-                    <h1>اطلاعات برنامه نویس</h1>
-                </div>
-                <div class="panel-body bio-graph-info">
-                  <h1>اطلاعات برنامه نویس </h1>
-                    <%= simple_form_for(@developer ,:html => {:class =>'form-horizontal'})  do |f| %>
-                    <div class="form-group">
-                        <div class="col-lg-6 col-lg-offset-4">
-                            <%= f.text_field :ssid , class:"form-control form-cascade-control input-small"  %>
-                        </div>
-                        <label  class="col-lg-2 control-label">کد ملی</label>
+        <div class="col-lg-9">
+            <aside class="profile-info col-lg-12">
+                <section class="panel">
+                    <div class="bio-graph-heading">
+                        <h1>اطلاعات برنامه نویس</h1>
                     </div>
+                    <div class="panel-body bio-graph-info">
+                      <h1>اطلاعات برنامه نویس </h1>
+                        <%= simple_form_for(@developer ,:html => {:class =>'form-horizontal'})  do |f| %>
+                        <div class="form-group">
+                            <div class="col-lg-6 col-lg-offset-4">
+                                <%= f.text_field :ssid , class:"form-control form-cascade-control input-small"  %>
+                            </div>
+                            <label  class="col-lg-2 control-label">کد ملی</label>
+                        </div>
 
-                    <div class="form-group">
-                        <div class="col-lg-6 col-lg-offset-4">
-                            <%= f.text_field :tel , class:"form-control form-cascade-control input-small"  %>
+                        <div class="form-group">
+                            <div class="col-lg-6 col-lg-offset-4">
+                                <%= f.text_field :tel , class:"form-control form-cascade-control input-small"  %>
+                            </div>
+                            <label  class="col-lg-2 control-label">تلفن</label>
                         </div>
-                        <label  class="col-lg-2 control-label">تلفن</label>
-                    </div>
 
-                    <div class="form-group">
-                        <div class="col-lg-6 col-lg-offset-4">
-                            <%= f.text_field :developer_account_id , class:"form-control form-cascade-control input-small"  %>
+                        <div class="form-group">
+                            <div class="col-lg-6 col-lg-offset-4">
+                                <%= f.text_field :developer_account_id , class:"form-control form-cascade-control input-small"  %>
+                            </div>
+                            <label  class="col-lg-2 control-label">نام کاربری</label>
                         </div>
-                        <label  class="col-lg-2 control-label">نام کاربری</label>
-                    </div>
 
-                    <div class="form-group">
-                        <div class="col-lg-offset-2 col-lg-10">
-                            <%= f.submit "ذخیره" , class:"btn btn-success"%>
+                        <div class="form-group">
+                            <div class="col-lg-offset-2 col-lg-10">
+                                <%= f.submit "ذخیره" , class:"btn btn-success"%>
+                            </div>
                         </div>
+                        <%end%>
                     </div>
-                    <%end%>
-                </div>
-            </section>
-            <section>
-                <div class="row">
-                </div>
-            </section>
-        </aside>
+                </section>
+                <section>
+                    <div class="row">
+                    </div>
+                </section>
+            </aside>
+            <div class="col-lg-12">
+                <aside class="profile-info col-lg-12">
+                    <section class="panel">
+                        <div class="bio-graph-heading">
+                            <h1>اطلاعات برنامه نویس</h1>
+                        </div>
+                        <div class="panel-body bio-graph-info">
+                            <% if !current_user.developer.nil?%>
+                                <%= render 'devgames' %>
+                            <% end %>
+                        </div>
+                    </section>
+                </aside>
+            </div>
+        </div>
+
+
         <aside class="profile-nav col-lg-3">
             <section class="panel">
                 <div class="user-heading round">
                     <%= link_to '#' do %>
-                    <% if current_user.profile.avatar %>
-                    <%= image_tag current_user.profile.avatar.url %>
-                    <%else%>
-                    <%image_tag('empty_avatar.jpg')%>
-                    <% end%>
+                        <% if current_user.profile.avatar %>
+                            <%= image_tag current_user.profile.avatar.url %>
+                        <%else%>
+                            <%image_tag('empty_avatar.jpg')%>
+                        <% end%>
                     <% end %>
+
                     <% if current_user.profile.firstname %>
-                    <h1><%=current_user.profile.firstname%> <%=current_user.profile.lastname%></h1>
+                        <h1><%=current_user.profile.firstname%> <%=current_user.profile.lastname%></h1>
                     <%end%>
                     <p><%=current_user.email%></p>
                 </div>
                 <ul class="nav nav-pills nav-stacked">
                     <li>
                         <%= link_to profile_path(current_user.profile) do %> 
-                        <i class="icon-user"></i> 
-                        پروفایل
+                            <i class="icon-user"></i> 
+                            پروفایل
                         <%end%>
                     </li>
                     <li>
                         <%= link_to edit_profile_path(current_user.profile) do %>
-                        <i class="icon-edit"></i>
-                        ویرایش پروفایل
+                            <i class="icon-edit"></i>
+                            ویرایش پروفایل
                         <%end%>
                     </li>
                     <li class="active">
                         <% if current_user.developer.nil?%>
-                        <%= link_to 'برناهه نویس هستید؟', new_developer_path %>
+                            <%= link_to 'برناهه نویس هستید؟', new_developer_path %>
                         <% else %>
-                        <%= link_to 'تنظیمات برنامه نویس', edit_developer_path(current_user.developer) %>
+                            <%= link_to 'تنظیمات برنامه نویس', edit_developer_path(current_user.developer) %>
                         <% end %>
                     </li>
                 </ul>
