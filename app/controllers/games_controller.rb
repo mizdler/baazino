@@ -34,12 +34,15 @@ class GamesController < ApplicationController
   # GET /games
   # GET /games.json
   def index
-    if !params[:search]
-      @games = Game.all
-      @isFirstPage = true
-    else
+    if params[:search]
       @games = Game.search(params[:search]).order("created_at DESC")
       @isFirstPage = false
+    elsif params[:genre_id]
+      @games = Genre.find(params[:genre_id]).games
+      @isFirstPage = false
+    else
+      @games = Game.all
+      @isFirstPage = true
     end
 
   end

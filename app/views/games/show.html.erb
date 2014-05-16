@@ -15,7 +15,7 @@
 		            </div>
 
 		            <div id = "typ">
-		              	<a href = "#"> action</a>
+		              	<%=link_to @game.genre.name, games_path(:genre_id => @game.genre.id)%>
 		            </div>
 
 		            <div id = "dlbt">
@@ -114,5 +114,38 @@
 				</div>
 			</div>
 		</div>
+
+
+				<div class="receptacle">
+			<div class="title">
+				<h2>اینارو پیدا کردیم</h2>
+			</div>
+
+			<% @game.genre.games.each do |game| %>
+			<%= link_to game, :class => "appLink" do %>
+			<article class="app">
+				<div class= "coverPhoto">
+					<% if game.cover_photo %>
+					<%= image_tag game.cover_photo.url %>
+					<% end%>
+				</div>
+				<div class="gameName">
+					<%= game.game_name %>
+				</div>
+				<div class="cat">
+					<%= game.description %>
+				</div>
+				<div class="priceMain">
+					<% if game.price!=0 %><%= game.price %> تومان<%else%>رایگان<%end%>
+				</div>
+			</article>
+			<% end %>
+			<% end %>
+			<div class="more">
+				<a href="/topgames">بیشتر</a>
+			</div>
+
+		</div>
+
 	</div>
 </div>
