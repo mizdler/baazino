@@ -46,6 +46,7 @@ Baazino::Application.routes.draw do
      get 'topgames' => 'games#all_top'
      get 'newgames' => 'games#all_new'
      get 'dowloadedgames' => 'games#all_downloaded'
+     get 'genres_menu' => 'games#genres_menu'
 
 
   # Example of named route that can be invoked with purchase_url(id: product.id)

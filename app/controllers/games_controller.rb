@@ -1,6 +1,13 @@
 class GamesController < ApplicationController
   before_action :set_game, only: [:show, :edit, :update, :destroy]
 
+  def genres_menu
+    Genre.all
+    respond_to do |format|
+      format.js
+    end
+   end
+
   def download
     @game = Game.find(params[:id])
 

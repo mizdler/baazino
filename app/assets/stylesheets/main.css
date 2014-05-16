@@ -1,9 +1,8 @@
 
-body 
+body
 {
 background-color: #54364a;
 background-size: cover;
-background-image:url(../images/a.jpg);
 font-family: Adobe Arabic;
 }
 .menu {
@@ -35,7 +34,7 @@ font-family: Adobe Arabic;
 	padding: 10px;
 	margin: 0 auto;
 	display: table;
-	
+
 }
 
 .receptacle {

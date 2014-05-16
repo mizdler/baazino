@@ -1,10 +1,9 @@
 
 
-body 
+body
 {
 background-color: #54364a;
 background-size: cover;
-background-image:url(../images/a.jpg);
 }
 
 
@@ -121,7 +120,7 @@ background-image:url(../images/a.jpg);
     float: left;
     margin-right: 20px;
     padding: 10px 11px;
-	
+
     -webkit-transition: all 0.4s ease 0s;
     -moz-transition: all 0.4s ease 0s;
     -ms-transition: all 0.4s ease 0s;
@@ -142,13 +141,13 @@ background-image:url(../images/a.jpg);
     border-right: 1px solid rgba(0, 0, 0, 0.1);
     float: left;
     list-style: none outside none;
-	
+
     -webkit-transition: all 0.4s ease 0s;
     -moz-transition: all 0.4s ease 0s;
     -ms-transition: all 0.4s ease 0s;
     -o-transition: all 0.4s ease 0s;
     transition: all 0.4s ease 0s;
-	
+
     width: 33.3333%;
 }
 .follow-widget li:hover {

@@ -14,7 +14,7 @@
                     <%= link_to 'بازینـــو',  games_path ,class:"navbar-brand" , id:"logo" %>
                 </div>
                 <div class="topbar-main">
-                    <a id="menu-toggle" href="#" class="btn hidden-xs">
+                    <a id="menu-toggle" href="#menu-toggle" class="btn hidden-xs">
                     <i class="fa fa-bars"></i>
                     </a>
                     <%= form_tag(games_path, :method => "get", id: "topbar-search" , class:"hidden-sm hidden-xs") do %>
@@ -64,8 +64,8 @@
                                                 </span>
                                                 <p class="text-muted small"><%=current_user.email%></p>
                                                 <div class="divider"></div>
-                                                <%= link_to profile_path(current_user.profile) , class:"btn btn-primary btn-sm" do %> 
-                                                <i class="icon-user"></i> 
+                                                <%= link_to profile_path(current_user.profile) , class:"btn btn-primary btn-sm" do %>
+                                                <i class="icon-user"></i>
                                                 پروفابل
                                                 <%end%>
                                             </div>
