@@ -21,7 +21,7 @@
 		            <div id = "dlbt">
 		              	<div class="btn-group">
 		                	<button type="button" class="btn btn-success col-log-4" id = "wishlist"> add to wish list</button>
-		                	<%=link_to "دانلود", download_game_path, method: :put, class:"btn btn-success clo-lg-4"%>
+		                	<%=link_to "دانلود", download_game_path, method: :get, class:"btn btn-success clo-lg-4"%>
 		              	</div>
 		            </div>
 
@@ -90,7 +90,7 @@
 												<%end%>
 												<% if comment.user.profile != nil %>
 													<%=comment.user.profile.lastname%>
-												<%end%> 
+												<%end%>
 												 <%=comment.created_at%></p>
 												<p style="font-size:25px;"><%= comment.body %></p>
 											</div>

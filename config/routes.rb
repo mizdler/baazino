@@ -25,7 +25,13 @@ Baazino::Application.routes.draw do
 
   devise_for :users, :controllers => {:registrations => "registrations"}
 
-  resources :games
+  resources :games do
+    member do
+      put "like", to: "games#upvote"
+      put "dislike", to: "games#downvote"
+      get "download"
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -90,13 +96,6 @@ Baazino::Application.routes.draw do
   #     resources :products
   #   end
 
-  resources :game do
-    member do
-      put "like", to: "games#upvote"
-      put "dislike", to: "games#downvote"
-      put "download", to: "games#download"
-    end
-  end
   resources :game do
     resources :comments
   end

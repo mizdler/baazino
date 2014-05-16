@@ -4,6 +4,11 @@ class GamesController < ApplicationController
   def download
     @game = Game.find(params[:id])
     Purchase.create(:game => @game, :price=> @game.price, :user=> current_user)
+    if(!@game.downloads_num)
+      @game.downloads_num = 0
+    end
+    @game.downloads_num += 1
+    @game.update(:downloads_num => @game.downloads_num)
     redirect_to @game.install_file.url
   end
 
@@ -106,7 +111,7 @@ class GamesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def game_params
-      params.require(:game).permit(:game_name, :version, :create_date, :release_date, :description, :developer_id, :game_info_id, :game_genre_id, :review_id, :price, :install_file, :platform, :support_version, :content, :cover_photo)
+      params.require(:game).permit(:game_name, :version, :create_date, :release_date, :description, :developer_id, :game_info_id, :game_genre_id, :review_id, :price, :install_file, :platform, :support_version, :content, :cover_photo, :downloads_num)
     end
 
 
