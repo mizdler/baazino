@@ -45,6 +45,8 @@ gem 'simple_form'
 
 gem 'sunspot_rails'
 gem 'sunspot_solr'
+
+gem "ckeditor"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

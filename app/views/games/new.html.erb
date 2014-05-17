@@ -52,14 +52,14 @@
 
 					                        <div class="form-group">
 												<div class="col-lg-6 col-md-6 col-lg-offset-4 col-md-offset-4">
-						                          	<%= f.select(:platform_id, options_from_collection_for_select(Platform.all, "id", "name"), class:"form-control form-cascade-control input-small", style:"width: 350px;")%>
+						                          	<%= f.select(:platform_id, options_from_collection_for_select(Platform.all, "id", "name"),{}, {:style =>'direction:rtl' , :class => 'form-control form-cascade-control input-small'})%>
 					                         </div>
 					                         <label class="col-lg-2 col-md-2 control-label">پلتفرم</label>
 						                    </div>
 
 					                        <div class="form-group">
 												<div class="col-lg-6 col-md-6 col-lg-offset-4 col-md-offset-4">
-						                          	<%= f.select(:genre_id, options_from_collection_for_select(Genre.all, "id", "name"), class:"form-control form-cascade-control input-small" ,style:"width: 350px;")%>
+						                          	<%= f.select(:genre_id, options_from_collection_for_select(Genre.all, "id", "name"), {}, {:style =>'direction:rtl' ,:class => 'form-control form-cascade-control input-small'} )%>
 					                         </div>
 					                         <label class="col-lg-2 col-md-2 control-label">ژانر</label>
 						                    </div>
@@ -70,14 +70,6 @@
 												</div>
 												<label class="col-lg-2 col-md-2 control-label">قیمت </label>
 											</div>
-
-											<div class="form-group">
-												<div class="col-lg-6 col-md-6 col-lg-offset-4 col-md-offset-4">
-													<%=f.text_area :description , class: "form-control form-cascade-control input-small" %>
-												</div>
-												<label class="col-lg-2 col-md-2 control-label">توضیحات </label>
-											</div>
-
 										</div>
 									</div>
 								</div>
@@ -87,8 +79,15 @@
 									<h2 class="StepTitle">توضیحات</h2>
 									<div class="panel panel-cascade">
 										<div class="form-group">
-												<div class="col-lg-6 col-md-6 col-lg-offset-4 col-md-offset-4">
-												<%= r.text_area :content ,class:"form-control form-cascade-control" ,rows:"3" ,style:"margin: 0px -0.671875px 0px 0px; width: 100%; height: 500px;"%>
+											<div class="col-lg-9 col-md-9 col-lg-offset-1 col-md-offset-1">
+												<%=f.text_area :description , class: "form-control form-cascade-control input-small ckeditor" %>
+											</div>
+											<label class="col-lg-2 col-md-2 control-label">توضیحات </label>
+										</div>
+
+										<div class="form-group">
+												<div class="col-lg-9 col-md-9 col-lg-offset-1 col-md-offset-1">
+												<%= r.text_area :content ,class: "ckeditor" %>
 											</div>
 											<label class="col-lg-2 col-md-2 control-label">توضیحات</label>
 										</div>
