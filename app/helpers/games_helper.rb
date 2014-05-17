@@ -13,15 +13,15 @@ module GamesHelper
   end
 
   def top_rates
-    Game.joins(:game_rate).order("game_rates.total desc").limit(6)
+    Game.joins(:game_rate).order("game_rates.total desc").limit(5)
   end
 
   def most_downloads
-    Game.order(:downloads_num => :desc).limit(6)
+    Game.order(:downloads_num => :desc).limit(5)
   end
 
   def new_ones
-    Game.order(:created_at => :desc).limit(6)
+    Game.order(:created_at => :desc).limit(5)
   end
 
   def resource_name

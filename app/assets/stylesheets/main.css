@@ -50,7 +50,7 @@ font-family: Adobe Arabic;
 	width: 100%;
 	display: table;
 	font-size: 16pt;
-	color: rgb(62, 45, 53);
+	color: #FFFFFF;
 	font-weight: bold;
 }
 
@@ -91,7 +91,7 @@ font-family: Adobe Arabic;
 	text-align: right;
 	width: 170px;
 	float: right;
-	margin: 10px;
+	margin: 20px;
 	height: 270px;
 	-moz-border-radius: 4px;
 	-webkit-border-radius: 4px;
