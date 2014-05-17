@@ -17,11 +17,3 @@
 //= require dataTables/jquery.dataTables.bootstrap
 //= require turbolinks
 //= require_tree .
-
-$(document).ready(function() {
-$('#menu-toggle').sidr({
-name: 'sidr-right',
-side: 'right',
-url: "http://"+location.host+"genres_menu"
-});
-});

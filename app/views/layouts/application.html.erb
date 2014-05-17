@@ -5,6 +5,7 @@
         <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
         <%= javascript_include_tag "application", media: "all", "data-turbolinks-track" => true %>
         <%= javascript_include_tag 'ckeditor/ckeditor.js' %>
+
         <%= csrf_meta_tags %>
         <script type="text/javascript">
 	        $(document).ready(function() {
@@ -14,7 +15,14 @@
 		            CKEDITOR.replace(data[i].id);
 		        });
 		    }
+
+			$('#menu_toggle').sidr({
+			name: 'sidr-right',
+			side: 'right',
 			});
+
+			});
+
 		</script>
     </head>
     <body>
@@ -23,7 +31,7 @@
             <nav id="topbar" role="navigation" style="margin-bottom: 0;" class="navbar navbar-default navbar-static-top">
                 <div id="mencol" class="col-lg-10">
 	                <div class="topbar-main">
-	                    <a id="menu_toggle" href="" class="btn hidden-xs">
+	                    <a id="menu_toggle" href="#menu_toggle" class="btn hidden-xs">
 	                    <i class="fa fa-bars"></i>
 	                    </a>
 	                    <%= form_tag(games_path, :method => "get", id: "topbar-search" , class:"hidden-sm hidden-xs") do %>
