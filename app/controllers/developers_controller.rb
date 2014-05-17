@@ -45,7 +45,7 @@ class DevelopersController < ApplicationController
     @developer.user = current_user
     respond_to do |format|
       if @developer.update(developer_params)
-        format.html { redirect_to @developer, notice: 'Developer was successfully updated.' }
+        format.html { redirect_to current_user.profile, notice: 'Developer was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

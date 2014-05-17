@@ -1,48 +1,8 @@
 <div class="col-lg-12 ">
 	<div class="row profile">
 		<%= render 'form' %>
-		<aside class="profile-nav col-lg-3">
-	      	<section class="panel">
-	          	<div class="user-heading round">
-	              	<%= link_to '#' do %>
-	              		<% if @profile.avatar %>
-							<%= image_tag @profile.avatar.url %>
-						<%else%>
-							<%image_tag('empty_avatar.jpg')%>
-						<% end%>
-	              	<% end %>
-	              	<% if @profile.firstname %>
-	              		<h1><%=@profile.firstname%> <%=@profile.lastname%></h1>
-	              	<%end%>
-	              	<p><%=current_user.email%></p>
-	          	</div>
 
-	      		<ul class="nav nav-pills nav-stacked">
-	              	<li>
-		              	<%= link_to profile_path(@profile) do %>
-		              		<i class=""></i>
-		              		پروفایل
-		              	<%end%>
-	                </li>
+		<%=render 'profile_nav'%>
 
-	                <li  class="active">
-	                  	<%= link_to edit_profile_path(@profile) do %>
-                    		<i class="icon-edit"></i>
-                    		ویرایش پروفایل
-                    	<%end%>
-	              	</li>
-
-	              	<li>
-                        <% if current_user.developer.nil?%>
-                            <%= link_to 'برناهه نویس هستید؟', new_developer_path %>
-                        <% else %>
-                           <%= link_to 'تنظیمات برنامه نویس', edit_developer_path(current_user.developer) %>
-                        <% end %>
-                    </li>
-	              	
-	          	</ul>
-			</section>
-	  	</aside>
-		      
 	</div>
 </div>
