@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  game_id: 
+  game_play: 1
+  graphic: 1
+  story: 1
+  total: 1
+
+two:
+  game_id: 
+  game_play: 1
+  graphic: 1
+  story: 1
+  total: 1

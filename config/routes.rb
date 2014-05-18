@@ -1,15 +1,59 @@
 Baazino::Application.routes.draw do
+
+  resources :profiles
+
+  resources :likes
+
+  resources :game_rates
+
+  resources :platforms
+
+  resources :banks
+
+  resources :developer_accounts
+
+  resources :developers
+
+  resources :reviews
+
+  resources :gates
+
+  resources :genres
+
+  resources :comments
+
+  resources :purchases
+
+  devise_for :users, :controllers => {:registrations => "registrations"}
+
+  mount Ckeditor::Engine => "/ckeditor"
+
+  resources :games do
+    member do
+      put "like", to: "games#upvote"
+      put "dislike", to: "games#downvote"
+      get "download"
+    end
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+   root 'games#index'
 
   # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+     get 'purchased_games' => 'purchases#purchased_games'
+
+     get 'topgames' => 'games#all_top'
+     get 'newgames' => 'games#all_new'
+     get 'dowloadedgames' => 'games#all_downloaded'
+     get 'genres_menu' => 'games#genres_menu'
+
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+  #  get 'games/:id/download' => 'game#dowload', as: :download
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
@@ -53,4 +97,8 @@ Baazino::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  resources :game do
+    resources :comments
+  end
 end

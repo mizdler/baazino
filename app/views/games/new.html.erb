@@ -1,0 +1,129 @@
+<%= javascript_include_tag "jquery.smartwizard", media: "all", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "smartwizard-custom", media: "all", "data-turbolinks-track" => true %>
+
+<%= form_for(@game , :html => {:class => "form-horizontal cacade-forms",  :multipart => true }) do |f| %>
+
+<div class="site-holder">
+	<div class="box-hol der">
+		<!-- .content -->
+		<div class="content">
+
+			<!-- Basic Wizard -->
+			<div class="row">
+				<div class="col-md-12">
+					<div class="panel panel-dat">
+						<div class="panel-body nopadding">
+							<!-- Smart Wizard -->
+							<div id="wizard" class="swMain">
+								<!-- header wizard -->
+
+								<ul>
+									<li>
+										<a href="#step-1"> <label class="stepNumber">1</label> <span class="stepDesc"> اطلاعات بازی </span> </a>
+									</li>
+									<li>
+										<a href="#step-2"> <label class="stepNumber">2</label> <span class="stepDesc"> توضیحات </span> </a>
+									</li>
+									<li>
+										<a href="#step-3"> <label class="stepNumber">3</label> <span class="stepDesc"> آپلود </span> </a>
+									</li>
+								</ul>
+
+								<div id="step-1">
+									<h2 class="StepTitle">اطلاعات بازی</h2>
+									<div class="panel panel-cascade">
+										<div class="panel-body">
+
+											<div class="form-group">
+												<div class="col-lg-6 col-md-6 col-lg-offset-4 col-md-offset-4">
+													<%=f.text_field :game_name, class: "form-control form-cascade-control input-small" %>
+												</div>
+												<label class="col-lg-2 col-md-2 control-label"> نام بازی </label>
+
+											</div>
+
+											<div class="form-group">
+												<div class="col-lg-6 col-md-6 col-lg-offset-4 col-md-offset-4">
+													<%=f.text_field :version , class: "form-control form-cascade-control input-small" %>
+												</div>
+												<label class="col-lg-2 col-md-2 control-label">ورژن </label>
+											</div>
+
+											<div class="form-group">
+												<div class="col-lg-6 col-md-6 col-lg-offset-4 col-md-offset-4">
+													<%= f.select(:platform_id, options_from_collection_for_select(Platform.all, "id", "name"),{}, {:style =>'direction:rtl' , :class => 'form-control form-cascade-control input-small'})%>
+												</div>
+												<label class="col-lg-2 col-md-2 control-label">پلتفرم</label>
+											</div>
+
+											<div class="form-group">
+												<div class="col-lg-6 col-md-6 col-lg-offset-4 col-md-offset-4">
+													<%= f.select(:genre_id, options_from_collection_for_select(Genre.all, "id", "name"), {}, {:style =>'direction:rtl' ,:class => 'form-control form-cascade-control input-small'} )%>
+												</div>
+												<label class="col-lg-2 col-md-2 control-label">ژانر</label>
+											</div>
+
+											<div class="form-group">
+												<div class="col-lg-6 col-md-6 col-lg-offset-4 col-md-offset-4">
+													<%=f.text_field :price , class: "form-control form-cascade-control input-small" %>
+												</div>
+												<label class="col-lg-2 col-md-2 control-label">قیمت </label>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<%= f.fields_for :review do |r| %>
+								<div id="step-2">
+									<h2 class="StepTitle">توضیحات</h2>
+									<div class="panel panel-cascade">
+										<div class="form-group">
+											<div class="col-lg-9 col-md-9 col-lg-offset-1 col-md-offset-1">
+												<%=f.text_area :description , class: "form-control form-cascade-control input-small ckeditor" %>
+											</div>
+											<label class="col-lg-2 col-md-2 control-label">توضیحات </label>
+										</div>
+
+										<div class="form-group">
+											<div class="col-lg-9 col-md-9 col-lg-offset-1 col-md-offset-1">
+												<%= r.text_area :content ,class: "ckeditor" %>
+											</div>
+											<label class="col-lg-2 col-md-2 control-label">توضیحات</label>
+										</div>
+									</div>
+								</div>
+
+								<% end %>
+
+								<div id="step-3">
+									<h2 class="StepTitle">پایان</h2>
+									<div class="panel panel-cascade">
+										<div class="panel-heading">
+											<div class="form-group">
+												<div class="col-lg-6 col-md-6 col-lg-offset-4 col-md-offset-4">
+													<%= f.file_field :install_file %>
+												</div>
+												<label class="col-lg-2 col-md-2 control-label upload-file-title"> آپلود فایل بازی</label>
+												<div class="col-lg-6 col-md-6 col-lg-offset-4 col-md-offset-4">
+													<%= f.file_field :cover_photo %>
+												</div>
+												<label class="col-lg-2 col-md-2 control-label upload-file-title"> آپلود کاور بازی</label>
+											</div>
+											<h3 class="panel-title"></h3>
+
+										</div>
+									</div>
+
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+</div>
+<% end %>

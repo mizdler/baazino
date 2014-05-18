@@ -1,0 +1,2 @@
+module GameRatesHelper
+end

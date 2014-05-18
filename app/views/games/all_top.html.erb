@@ -1,0 +1,26 @@
+<div class="container">
+	<div class="title">
+		<h2>برترین ها</h2>
+	</div>
+	<% all_rates.each do |game| %>
+
+	<%= link_to game, :class => "appLink" do %>
+	<article class="app">
+		<div class= "coverPhoto">
+			<% if game.cover_photo %>
+			<%= image_tag game.cover_photo.url %>
+			<% end%>
+		</div>
+		<div class="gameName">
+			<%= game.game_name %>
+		</div>
+		<div class="cat">
+			<%= game.description %>
+		</div>
+		<div class="priceMain">
+			<% if game.price!=0 %><%= game.price %> تومان<%else%>رایگان<%end%>
+		</div>
+	</article>
+	<% end %>
+	<% end %>
+</div>

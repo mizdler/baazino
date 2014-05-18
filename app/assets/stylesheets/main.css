@@ -1,0 +1,293 @@
+body {
+	background-color: #54364a;
+	background-size: cover;
+	font-family: Adobe Arabic;
+}
+.menu {
+	list-style: none;
+	margin: 10;
+	padding-right: 20px;
+	padding-left: 20px;
+	height: 50px;
+}
+
+.menu li {
+	display: inline;
+}
+
+.menu li a {
+	display: block;
+	float: right;
+	margin: 0 15px;
+	padding: 16px 0;
+}
+
+.menu li a:hover {
+	text-decoration: none;
+	color: #555;
+}
+
+.container {
+	width: 85%;
+	padding: 10px;
+	margin: 0 auto;
+	display: table;
+}
+
+.receptacle {
+	width: 85%;
+	padding: 10px;
+	margin: 0 auto;
+	margin-top: 10px;
+	display: table;
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+.title {
+	width: 100%;
+	display: table;
+	font-size: 16pt;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+
+.tozihat {
+	display: block;
+	font-family: B Nazanin;
+	font-size: 12pt;
+	color: rgb(200, 200, 200);
+	line-height: 150%;
+	width: 300px;
+	text-align: right;
+	float: right;
+	margin: 40px;
+	margin-top: -300px;
+	margin-right: 120px;
+	font-weight: bold;
+}
+.img-class-avatar{
+	width: 100px;
+	height: 100px;
+}
+.upload-file-title{
+	font-size: 20px;
+}
+
+.title h2 {
+	float: right;
+}
+
+.title .more {
+	float: left;
+	margin: 25px 40px;
+}
+.more {
+	margin-top: 270px;
+}
+.more a, .buy {
+	color: #fff !important;
+	background-color: rgba(0, 0, 0, 0.2);
+	padding: 4px 12px;
+	transition: all 0.2s ease 0s;
+}
+
+.more a:hover, .buy:hover {
+	background-color: rgba(0, 0, 0, 0.3);
+	text-decoration: none;
+}
+
+.more a:active, .buy:active {
+	background-color: #96aa39;
+	-moz-box-shadow: inset 0 2px 0 rgba(0,0,0,0.27);
+	-ms-box-shadow: inset 0 2px 0 rgba(0,0,0,0.27);
+	-webkit-box-shadow: inset 0 2px 0 rgba(0,0,0,0.27);
+	box-shadow: inset 0 2px 0 rgba(0,0,0,0.27);
+}
+
+.app {
+	background: #fff;
+	text-align: right;
+	width: 170px;
+	float: right;
+	margin: 20px;
+	height: 270px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	-moz-box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+	-ms-box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+	-webkit-box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+	box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+	display: block;
+	color: black;
+}
+
+.app a {
+	color: #333;
+	text-decoration: none;
+}
+
+.app h2 {
+	margin-right: 10px;
+}
+
+.thumb {
+	width: 170px;
+}
+
+.cat {
+	float: right;
+	margin-right: 10px;
+}
+
+.price {
+	float: left;
+	color: green;
+	margin-left: 3px;
+}
+
+.priceMain {
+	float: left;
+	color: green;
+	margin-left: 3px;
+	position: relative;
+	top: 40px;
+}
+.gameName {
+	color: rgba(0,0,0,0.6);
+	font-weight: bold;
+	margin-top: 3px;
+	margin-right: 3px;
+}
+
+.appLink :hover {
+	background-color: rgb(150, 150, 150);
+}
+.app-post {
+	width: 97%;
+	padding: 10px;
+	display: table;
+}
+
+.app-post figure {
+	width: 250px;
+	float: right;
+	height: 250px;
+}
+
+.app-tt {
+	display: table;
+}
+
+.app-post h2 {
+	float: right;
+}
+
+.app-post .cat {
+	float: right;
+	margin: 27px 13px;
+	font-size: 12px;
+}
+
+.app-post .desc {
+	float: right;
+	width: 65%;
+}
+
+.app-post aside {
+	float: left;
+	width: 150px;
+	text-align: center;
+}
+
+.app-post .price {
+	float: none;
+}
+
+.app-post .buy {
+	border: none;
+	cursor: pointer;
+	width: 78%;
+	font-size: 16px;
+}
+
+.upload {
+	padding: 10px;
+	width: 70%;
+	margin: 0 auto;
+}
+
+.upload form {
+	margin: 15px;
+}
+
+.dropdown-menu-li {
+	width: 100%;
+}
+
+.upload form button {
+	border: none;
+	cursor: pointer;
+	width: 200px;
+	font-size: 16px;
+}
+
+.details {
+	background: #fff;
+	text-align: right;
+	width: 200px;
+	float: right;
+	margin-right: 20px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	-moz-box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+	-ms-box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+	-webkit-box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+	box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.coverPhoto img {
+	width: 170px;
+	height: 170px;
+}
+
+.siteName {
+	color: white;
+	font-size: 20pt;
+	font-weight: bold;
+	float: right;
+	margin: 40px;
+}
+.siteNameTitle {
+	font-size: 25pt;
+	color: red;
+	text-align: right;
+}
+
+#ne_user {
+	direction: rtl;
+}
+
+.forget {
+	color: rgb(255 , 255 , 255);
+}
+.sgnbt {
+	border-left: 0px;
+	border-right: 0px;
+}
+.ed_user {
+	margin: 20px;
+	box-shadow: 0 0 1px 1px rgba(0 , 0,0,0.1);
+	padding-bottom: 1px;
+}
+#edit {
+	background-color: rgb(255 , 255 , 255);
+	margin-top: 20px;
+	border-radius: 6px;
+	direction: rtl;
+}
+
+.content {
+	margin: 10px;
+}

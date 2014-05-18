@@ -1,14 +1,156 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Baazino</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+    <head>
+        <title>Baazino</title>
+        <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+        <%= javascript_include_tag "application", media: "all", "data-turbolinks-track" => true %>
+        <%= javascript_include_tag 'ckeditor/ckeditor.js' %>
 
-<%= yield %>
+        <%= csrf_meta_tags %>
+        <script type="text/javascript">
+	        $(document).ready(function() {
+		    if ($('.ckeditor').length > 0) {
+		        var data = $('.ckeditor');
+		        $.each(data, function(i) {
+		            CKEDITOR.replace(data[i].id);
+		        });
+		    }
 
-</body>
+			$('#menu_toggle').sidr({
+			name: 'sidr-right',
+			side: 'right',
+			});
+
+			});
+
+		</script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <!--BEGIN TOPBAR-->
+            <nav id="topbar" role="navigation" style="margin-bottom: 0;" class="navbar navbar-default navbar-static-top">
+                <div id="mencol" class="col-lg-10">
+	                <div class="topbar-main">
+	                    <a id="menu_toggle" href="#menu_toggle" class="btn hidden-xs">
+	                    <i class="fa fa-bars"></i>
+	                    </a>
+	                    <%= form_tag(games_path, :method => "get", id: "topbar-search" , class:"hidden-sm hidden-xs") do %>
+	                    <div class="input-icon right">
+	                        <%= text_field_tag :search, params[:search], placeholder: "جستجو",class:"form-control" %>
+	                        <a href="#">
+	                        <i class="fa fa-search"></i>
+	                        </a>
+	                        <%=image_submit_tag("search.png", class: 'fa fa-search', alt: 'Find' , id:"search_image")%>
+	                    </div>
+	                    <% end %>
+	                    <div id="mencol" class="col-lg-2">
+		                    <%if user_signed_in? %>
+			                    <ul class="nav navbar-top-links navbar-right">
+			                        <li class="dropdown hi">
+			                            <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+			                            <% if current_user.profile %>
+			                            <%if current_user.profile.avatar %>
+			                            <%= image_tag current_user.profile.avatar.url   , class:"img-responsive img-circle"%>
+			                            <%end%>
+			                            <%else%>
+			                            <%= image_tag 'empty_avatar.jpg'%>
+			                            <% end%>
+			                            &nbsp;
+			                            <%if current_user.profile%>
+			                            <%=current_user.profile.firstname%> <%=current_user.profile.lastname%>
+			                            <%end%>
+			                            &nbsp;<span class="caret"></span>
+			                            </a>
+			                            <ul class="dropdown-menu dropdown-user pull-right animated bounceInLeft" style="font-size:120%;">
+			                                <li>
+			                                    <div class="navbar-content">
+			                                        <div class="row">
+			                                            <div class="col-md-5 col-xs-5">
+			                                                <% if current_user.profile %>
+			                                                <%if current_user.profile.avatar %>
+			                                                <%= image_tag current_user.profile.avatar.url   , class:"img-responsive img-circle img-class-avatar"%>
+			                                                <%end%>
+			                                                <%else%>
+			                                                <%= image_tag 'empty_avatar.jpg' , class:"img-responsive img-circle img-class-avatar"%>
+			                                                <% end%>
+			                                            </div>
+			                                            <div class="col-md-7 col-xs-5">
+			                                                <span>
+			                                                <%if current_user.profile%>
+			                                                <%=current_user.profile.firstname%> <%=current_user.profile.lastname%>
+			                                                <%end%>
+			                                                </span>
+			                                                <p class="text-muted small"><%=current_user.email%></p>
+			                                                <div class="divider"></div>
+			                                                <%= link_to profile_path(current_user.profile) , class:"btn btn-primary btn-sm" do %>
+			                                                <i class="icon-user"></i>
+			                                                پروفابل
+			                                                <%end%>
+			                                            </div>
+			                                        </div>
+			                                    </div>
+			                                    <div class="navbar-footer">
+			                                        <div class="navbar-footer-content">
+			                                            <div class="row">
+			                                                <div class="col-md-6 col-xs-6">
+			                                                    <%= link_to edit_profile_path(current_user.profile) , class: "btn btn-success" do %>
+			                                                    <i class="icon-edit"></i>
+			                                                    ویرایش پروفایل
+			                                                    <%end%>
+			                                                </div>
+			                                                <div class="col-md-6 col-xs-6">
+			                                                    <%= link_to destroy_user_session_path , class:"btn btn-success" do%>
+			                                                    خروج
+			                                                    <%end%>
+			                                                </div>
+			                                            </div>
+			                                        </div>
+			                                    </div>
+			                                </li>
+			                            </ul>
+			                        </li>
+			                    </ul>
+		                    <%else%>
+			                    <ul class="nav navbar-top-links navbar-right">
+			                        <div class="col-lg-12" style="margin-top: 10px;">
+				                        <div class="col-lg-6">
+				                            <a href="#" data-toggle="modal" data-target="#basicModal" style="text-decoration:none;float: left">
+				                            <%= image_tag "sign_in.png" , id:"sign_out"%>
+				                            </a>
+				                            <div class="modal fade" id="basicModal" tabindex="2" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+				                                <div class="modal-dialog">
+				                                    <div class="modal-content">
+				                                        <div class="modal-header">
+				                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+				                                            &times;
+				                                            </button>
+				                                            <h4 class="modal-title" id="myModalLabel">ورود</h4>
+				                                        </div>
+				                                        <div class="row">
+				                                            <%= render "devise/sessions/new" %>
+				                                        </div>
+				                                    </div>
+				                                </div>
+				                            </div>
+				                        </div>
+				                        <div class="col-lg-6">
+				                            <%= link_to new_registration_path(resource_name) do%>
+				                            <%= image_tag "sign_up.png" , id:"sign_out"%>
+				                            <%end%>
+				                        </div>
+				                    </div>
+			                    </ul>
+		                    <%end%>
+	                   	</div>
+	                </div>
+	            </div>
+                <div  id="mencol" class="col-lg-2">
+	                <div class="navbar-header">
+	                    <%= link_to 'بازینـــو',  games_path ,class:"navbar-brand" , id:"logo" %>
+	                </div>
+                </div>
+            </nav>
+            <%= yield %>
+        </div>
+    </body>
 </html>

@@ -1,0 +1,167 @@
+<script>
+	$(function() {
+		if (!flux.browser.supportsTransitions)
+			;
+		//alert("Flux Slider requires a browser that supports CSS3 transitions");
+
+		window.f = new flux.slider('#slider', {
+			pagination : true,
+			width : 750,
+			height : 300
+		});
+	});
+</script>
+
+<div class="siteName">
+	<div class="siteNameTitle">
+		بازینــــــــــــــــــــــــــــــــو
+	</div>
+	<div style="margin-right: 40px;">
+	حلقه بین بازی ساز و گیمر موبایل
+	</div>
+</div>
+
+
+<%if @isFirstPage%>
+<section class="container">
+	<div id="slider">
+		<% @games.each do |game| %>
+		<%= image_tag(game.cover_photo ) %>
+		<%end%>
+	</div>
+</section>
+
+<div class="tozihat">
+	اینجا میتونی جدید ترین بازی های موبایل رو دانلود کنی و حالش رو ببری!
+	تازه اگه خودت بازی نویس هستی بازی رو بذار اینجا تا بقیه ازش استفاده کنن
+</div>
+<div class="receptacle">
+	<div class="title">
+		<h2>برترین ها</h2>
+	</div>
+
+	<% top_rates.each do |game| %>
+	<%= link_to game, :class => "appLink" do %>
+	<article class="app">
+		<div class= "coverPhoto">
+			<% if game.cover_photo %>
+			<%= image_tag game.cover_photo.url %>
+			<% end%>
+		</div>
+		<div class="gameName">
+			<%= game.game_name %>
+		</div>
+		<div class="cat">
+			<%= game.description %>
+		</div>
+		<div class="priceMain">
+			<% if game.price!=0 %><%= game.price %> تومان<%else%>رایگان<%end%>
+		</div>
+	</article>
+	<% end %>
+	<% end %>
+	<div class="more">
+		<a href="/topgames">بیشتر</a>
+	</div>
+
+</div>
+
+<div class="receptacle">
+
+	<div class="title">
+		<h2>تازه ها</h2>
+
+	</div>
+
+	<% new_ones.each do |game| %>
+	<%= link_to game, :class => "appLink" do %>
+	<article class="app">
+		<div class= "coverPhoto">
+			<% if game.cover_photo %>
+			<%= image_tag game.cover_photo.url %>
+			<% end%>
+		</div>
+		<div class="gameName">
+			<%= game.game_name %>
+		</div>
+		<div class="cat">
+			<%= game.description %>
+		</div>
+		<div class="priceMain">
+			<% if game.price!=0 %><%= game.price %> تومان<%else%>رایگان<%end%>
+		</div>
+	</article>
+	<% end %>
+	<% end %>
+
+	<div class="more">
+		<a href="/newgames">بیشتر</a>
+	</div>
+
+</div>
+
+<div class="receptacle">
+	<div class="title">
+		<h2>بیشترین دانلود</h2>
+	</div>
+	<% most_downloads.each do |game| %>
+	<%= link_to game, :class => "appLink" do %>
+	<article class="app">
+		<div class= "coverPhoto">
+			<% if game.cover_photo %>
+			<%= image_tag game.cover_photo.url %>
+			<% end%>
+		</div>
+		<div class="gameName">
+			<%= game.game_name %>
+		</div>
+		<div class="cat">
+			<%= game.description %>
+		</div>
+		<div class="priceMain">
+			<% if game.price!=0 %><%= game.price %> تومان<%else%>رایگان<%end%>
+		</div>
+	</article>
+	<% end %>
+	<% end %>
+
+	<div class="more">
+		<a href="/dowloadedgames">بیشتر</a>
+	</div>
+
+
+	<% else %>
+
+		<div class="receptacle">
+			<div class="title">
+				<h2>اینارو پیدا کردیم</h2>
+			</div>
+
+			<% @games.each do |game| %>
+			<%= link_to game, :class => "appLink" do %>
+			<article class="app">
+				<div class= "coverPhoto">
+					<% if game.cover_photo %>
+					<%= image_tag game.cover_photo.url %>
+					<% end%>
+				</div>
+				<div class="gameName">
+					<%= game.game_name %>
+				</div>
+				<div class="cat">
+					<%= game.description %>
+				</div>
+				<div class="priceMain">
+					<% if game.price!=0 %><%= game.price %> تومان<%else%>رایگان<%end%>
+				</div>
+			</article>
+			<% end %>
+			<% end %>
+			<div class="more">
+				<a href="/topgames">بیشتر</a>
+			</div>
+
+		</div>
+
+	<% end %>
+</div>

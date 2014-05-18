@@ -1,0 +1,27 @@
+  <%= javascript_include_tag "developers", media: "all", "data-turbolinks-track" => true %>
+<div class="receptacle">
+	<div class="title">
+		<h2>بازی های خریداری شده</h2>
+	</div>
+
+	<% @purchaseds.each do |p| %>
+	<%= link_to p.game, :class => "appLink" do %>
+	<article class="app">
+		<div class= "coverPhoto">
+			<% if p.game.cover_photo %>
+			<%= image_tag p.game.cover_photo.url %>
+			<% end%>
+		</div>
+		<div class="gameName">
+			<%= p.game.game_name %>
+		</div>
+		<div class="cat">
+			<%= p.game.description %>
+		</div>
+		<div class="priceMain">
+			<% if p.game.price!=0 %><%= p.game.price %> تومان<%else%>رایگان<%end%> (خرید شده)
+		</div>
+	</article>
+	<% end %>
+	<% end %>
+</table>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Game:</strong>
+  <%= @game_rate.game %>
+</p>
+
+<p>
+  <strong>Game play:</strong>
+  <%= @game_rate.game_play %>
+</p>
+
+<p>
+  <strong>Graphic:</strong>
+  <%= @game_rate.graphic %>
+</p>
+
+<p>
+  <strong>Story:</strong>
+  <%= @game_rate.story %>
+</p>
+
+<p>
+  <strong>Total:</strong>
+  <%= @game_rate.total %>
+</p>
+
+<%= link_to 'Edit', edit_game_rate_path(@game_rate) %> |
+<%= link_to 'Back', game_rates_path %>

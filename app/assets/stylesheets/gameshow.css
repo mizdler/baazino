@@ -1,0 +1,220 @@
+@font-face
+{
+	font-family: danesh;
+	src:url("fonts/danesh.ttf");
+}
+
+@font-face
+{
+	font-family: danesh;
+	src:url("fonts/daneshbd.ttf");
+
+	font-weight: bold;
+}
+
+@font-face
+{
+	font-family: danesh;
+	src : url("fonts/daneshitalic.ttf");
+
+	font-weight: italic;
+}
+
+@font-face
+{
+	font-family: Far.Bardiya;
+	src : url("fonts/Far_Bardiya.ttf");
+}
+@font-face
+{
+	font-family: morvarid;
+	src:url("fonts/Far_Morvarid.ttf");
+}
+
+@font-face
+{
+	font-family: Adobe Arabic;
+	src:url("fonts/Adobe.Arabic-Bold.otf");
+	
+	font-weight:bold;
+}
+
+@font-face
+{
+	font-family: Adobe Arabic;
+	src:url("fonts/Adobe.Arabic-Regula.otf");
+}
+
+
+@font-face
+{
+	font-family: Adobe Arabic;
+	src:url("fonts/AdobeArabic-Italic.otf");
+	
+	font-weight :italic;
+}
+
+@font-face
+{
+	font-family: Adobe Arabic;
+	src : url ("fonts/AdobeArabic-BoldItalic.otf");
+	
+	font-weight:bold , italic;
+}
+
+#alaki
+{
+	
+}
+
+
+
+#gmn h2
+{
+	height:  = 70px;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+#devn , #typ ,#ranking 
+{
+	height: 30px;
+}
+
+#devn , #typ ,#ranking ,#gmn , #dlbt 
+,.version,.pric
+{
+	margin: 15px;
+}
+
+#gmn
+{
+	margin-top: 30px;
+}
+
+#dlbt
+{
+	height: 50px;
+}
+.download
+{
+	direction: rtl;
+	background-color: rgb(255 , 255 , 255);
+	height: 320px;
+}
+
+
+.container
+{
+	padding-top: 20px;
+}
+
+#introduction
+{
+	margin-top: 30px;
+}
+
+.detail
+{
+	direction: rtl;
+	
+}
+
+.gameshow
+{
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 20px;
+}
+
+.slid
+{
+	background-color: rgb(255 , 255 , 255);
+	padding-right: 0px;
+	padding-left: 0px;
+}
+
+a
+{
+	color: rgb(0 , 0, 0);
+}
+
+pre
+{
+	font-size: 13px;
+	font-family: Tahoma;
+	background-color: rgb(255 , 255 , 255);
+}
+
+
+.rev , .review
+{
+	background-color: rgb(255 , 255 , 255);
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.rev
+{
+	margin-top: 20px;
+}
+.col-lg-12 , .col-lg-9 , .col-lg-3
+{
+	padding-right: 0px;
+	padding-left: 0px;
+}
+
+.image
+{
+	margin: 0 auto;
+}
+
+.download , .image ,.slid , .rev
+{
+	box-shadow: 0 0 2px 2px rgb(0 , 0 , 0 , 0.4);
+	border-radius: 4px;
+	font-size: 150%;
+}
+
+.game_name
+{
+	font-size: 20px;
+	margin: 0 auto;
+	font-weight: bold;
+	padding-right: 50px;
+	padding-top: 10px;
+}
+
+.image
+{
+	height: 320px;
+	width: 240px;
+}
+
+.dnb
+{
+	padding-left: 40px;
+	padding-right: 40px;
+	padding-top: 5px;
+	font-size: 20px;
+	margin-right: 0px;
+}
+
+.pric
+{
+	direction: rtl;
+	color: green;
+}
+
+.line
+{
+	height: 1px;
+	background-color: rgb(61 , 94 , 46);
+	box-shadow: 3px 3px 2px 0px;
+}
+
+.comments
+{
+	background-color: rgb(250 , 250 , 250);
+	direction: rtl;
+}
