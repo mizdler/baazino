@@ -65,6 +65,7 @@ class GamesController < ApplicationController
   # GET /games/new
   def new
     @game = Game.new
+    @game.build_video
     @game.build_review
   end
 
@@ -80,11 +81,11 @@ class GamesController < ApplicationController
   def create
     @game = Game.new(game_params)
     @game.developer = current_user.developer
-    @game_rate = GameRate.new()
-    @game_rate.game = @game
 
     respond_to do |format|
-      if @game.save and @game_rate.save
+      if @game.save
+        GameRate.create(:game_id => @game.id)
+
         format.html { redirect_to @game, notice: 'Game was successfully created.' }
         format.json { render action: 'show', status: :created, location: @game }
       else
@@ -126,7 +127,7 @@ class GamesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def game_params
-      params.require(:game).permit(:game_name, :version, :create_date, :release_date, :description, :developer_id, :genre_id, :review_id, :price, :install_file, :platform_id, :support_version, :content, :cover_photo, :downloads_num)
+      params.require(:game).permit(:game_name, :version, :create_date, :release_date, :description, :developer_id, :genre_id, :review_id, :price, :install_file, :platform_id, :support_version, :cover_photo, :downloads_num, :review_attributes)
     end
 
 

@@ -1,5 +1,7 @@
 Baazino::Application.routes.draw do
 
+  resources :videos
+
   resources :profiles
 
   resources :likes

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140517094901) do
+ActiveRecord::Schema.define(version: 20140518124400) do
 
   create_table "banks", force: true do |t|
     t.string   "bank_name"
@@ -199,6 +199,19 @@ ActiveRecord::Schema.define(version: 20140517094901) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "videos", force: true do |t|
+    t.string   "title"
+    t.integer  "game_id"
+    t.string   "video_file_file_name"
+    t.string   "video_file_content_type"
+    t.integer  "video_file_file_size"
+    t.datetime "video_file_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "videos", ["game_id"], name: "index_videos_on_game_id"
 
   create_table "votes", force: true do |t|
     t.integer  "votable_id"

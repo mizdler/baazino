@@ -1,0 +1,26 @@
+<link href="//localhost:3000/video-js.css" rel="stylesheet">
+<script src="//localhost:3000/video.js"></script>
+<script>
+  videojs.options.flash.swf = "localhost:3000/video-js.swf"
+</script>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @video.title %>
+</p>
+
+<p>
+  <strong>Game:</strong>
+  <%= @video.game %>
+</p>
+
+<video id="video_id" class="video-js vjs-default-skin vjs-big-play-centered"
+  controls preload="auto" width="640" height="264"
+ <source src="<%= @video.video_file.url%>" />
+</video>
+
+
+
+<%= link_to 'Edit', edit_video_path(@video) %> |
+<%= link_to 'Back', videos_path %>
