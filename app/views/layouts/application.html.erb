@@ -68,10 +68,10 @@
 			                                            <div class="col-md-5 col-xs-5">
 			                                                <% if current_user.profile %>
 			                                                <%if current_user.profile.avatar %>
-			                                                <%= image_tag current_user.profile.avatar.url   , class:"img-responsive img-circle"%>
+			                                                <%= image_tag current_user.profile.avatar.url   , class:"img-responsive img-circle img-class-avatar"%>
 			                                                <%end%>
 			                                                <%else%>
-			                                                <%= image_tag 'empty_avatar.jpg' , class:"img-responsive img-circle"%>
+			                                                <%= image_tag 'empty_avatar.jpg' , class:"img-responsive img-circle img-class-avatar"%>
 			                                                <% end%>
 			                                            </div>
 			                                            <div class="col-md-7 col-xs-5">

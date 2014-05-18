@@ -1,9 +1,7 @@
-
-body
-{
-background-color: #54364a;
-background-size: cover;
-font-family: Adobe Arabic;
+body {
+	background-color: #54364a;
+	background-size: cover;
+	font-family: Adobe Arabic;
 }
 .menu {
 	list-style: none;
@@ -18,10 +16,10 @@ font-family: Adobe Arabic;
 }
 
 .menu li a {
-    display: block;
-    float: right;
-    margin: 0 15px;
-    padding: 16px 0;
+	display: block;
+	float: right;
+	margin: 0 15px;
+	padding: 16px 0;
 }
 
 .menu li a:hover {
@@ -34,7 +32,6 @@ font-family: Adobe Arabic;
 	padding: 10px;
 	margin: 0 auto;
 	display: table;
-
 }
 
 .receptacle {
@@ -54,17 +51,38 @@ font-family: Adobe Arabic;
 	font-weight: bold;
 }
 
+.tozihat {
+	display: block;
+	font-family: B Nazanin;
+	font-size: 12pt;
+	color: rgb(200, 200, 200);
+	line-height: 150%;
+	width: 300px;
+	text-align: right;
+	float: right;
+	margin: 40px;
+	margin-top: -300px;
+	margin-right: 120px;
+	font-weight: bold;
+}
+.img-class-avatar{
+	width: 100px;
+	height: 100px;
+}
+.upload-file-title{
+	font-size: 20px;
+}
+
 .title h2 {
 	float: right;
 }
-
 
 .title .more {
 	float: left;
 	margin: 25px 40px;
 }
-.more{
-	margin-top:270px;
+.more {
+	margin-top: 270px;
 }
 .more a, .buy {
 	color: #fff !important;
@@ -128,22 +146,21 @@ font-family: Adobe Arabic;
 	margin-left: 3px;
 }
 
-
 .priceMain {
 	float: left;
 	color: green;
 	margin-left: 3px;
 	position: relative;
-	top : 40px;
+	top: 40px;
 }
-.gameName{
-	color:rgba(0,0,0,0.6);
+.gameName {
+	color: rgba(0,0,0,0.6);
 	font-weight: bold;
 	margin-top: 3px;
 	margin-right: 3px;
 }
 
-.appLink :hover{
+.appLink :hover {
 	background-color: rgb(150, 150, 150);
 }
 .app-post {
@@ -153,9 +170,9 @@ font-family: Adobe Arabic;
 }
 
 .app-post figure {
-    width: 250px;
-    float: right;
-    height: 250px;
+	width: 250px;
+	float: right;
+	height: 250px;
 }
 
 .app-tt {
@@ -163,24 +180,24 @@ font-family: Adobe Arabic;
 }
 
 .app-post h2 {
-    float: right;
+	float: right;
 }
 
 .app-post .cat {
-    float: right;
-    margin: 27px 13px;
-    font-size: 12px;
+	float: right;
+	margin: 27px 13px;
+	font-size: 12px;
 }
 
 .app-post .desc {
-    float: right;
-    width: 65%;
+	float: right;
+	width: 65%;
 }
 
 .app-post aside {
-    float: left;
-    width: 150px;
-    text-align: center;
+	float: left;
+	width: 150px;
+	text-align: center;
 }
 
 .app-post .price {
@@ -188,10 +205,10 @@ font-family: Adobe Arabic;
 }
 
 .app-post .buy {
-    border: none;
+	border: none;
 	cursor: pointer;
-    width: 78%;
-    font-size: 16px;
+	width: 78%;
+	font-size: 16px;
 }
 
 .upload {
@@ -204,15 +221,15 @@ font-family: Adobe Arabic;
 	margin: 15px;
 }
 
-.dropdown-menu-li{
+.dropdown-menu-li {
 	width: 100%;
 }
 
 .upload form button {
 	border: none;
 	cursor: pointer;
-    width: 200px;
-    font-size: 16px;
+	width: 200px;
+	font-size: 16px;
 }
 
 .details {
@@ -230,53 +247,47 @@ font-family: Adobe Arabic;
 	box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.coverPhoto img{
+.coverPhoto img {
 	width: 170px;
 	height: 170px;
 }
 
-.siteName{
+.siteName {
 	color: white;
 	font-size: 20pt;
 	font-weight: bold;
 	float: right;
-	margin:40px;
+	margin: 40px;
 }
-.siteNameTitle{
+.siteNameTitle {
 	font-size: 25pt;
 	color: red;
+	text-align: right;
 }
 
-#ne_user
-{
+#ne_user {
 	direction: rtl;
 }
 
-.forget
-{
+.forget {
 	color: rgb(255 , 255 , 255);
 }
-.sgnbt
-{
+.sgnbt {
 	border-left: 0px;
 	border-right: 0px;
 }
-.ed_user
-{
+.ed_user {
 	margin: 20px;
 	box-shadow: 0 0 1px 1px rgba(0 , 0,0,0.1);
 	padding-bottom: 1px;
 }
-#edit
-{
+#edit {
 	background-color: rgb(255 , 255 , 255);
 	margin-top: 20px;
 	border-radius: 6px;
 	direction: rtl;
 }
 
-.content
-{
+.content {
 	margin: 10px;
-
 }

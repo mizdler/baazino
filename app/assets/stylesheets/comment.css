@@ -92,7 +92,7 @@ background-size: cover;
 .msg-time-chat:hover:before {   background:rgba(0,0,0,0.5);}
 .msg-time-chat:first-child {    padding-top: 0;}
 .message-img {    float: left;    margin-right: 30px;    overflow: hidden;}
-.message-img img {    display: block;    height: 44px;    width: 44px;}
+.message-img img {    display: block;    height: 50px;    width: 50px; border-radius :50%;}
 .message-body {    margin-left: 80px;}
 .msg-time-chat .msg-in .text {    background: rgba(0,0,0,0.2);    padding: 10px;}
 .msg-time-chat .msg-out .text {    background:rgba(0,0,0,0.5);    padding: 10px;}
@@ -104,7 +104,7 @@ background-size: cover;
 
 .chat-form {    background-color: rgba(0,0,0,0.2);    clear: both;    margin-top: 15px;    padding: 10px;}
 .chat-form .input-cont {    margin-right: 55px;}
-.chat-form .input-cont textarea {    margin-bottom: 0;}
+.chat-form .input-cont textarea {    margin-bottom: 0; color: white;}
 .chat-form .input-cont textarea {    border: 1px solid rgba(255,255,255,0.2) !important;    border-radius: 0 0 0 0;    margin-top: 0;    width: 94%;}
 .chat-form .input-cont textarea {    background-color:rgba(0,0,0,0.2) !important;}
 .chat-form .input-cont textarea:focus {    border: 1px solid rgba(255,255,255,0.2) !important;}
