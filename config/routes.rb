@@ -1,5 +1,7 @@
 Baazino::Application.routes.draw do
 
+  resources :images
+
   resources :videos
 
   resources :profiles

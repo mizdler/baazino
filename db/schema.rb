@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140518124400) do
+ActiveRecord::Schema.define(version: 20140518201702) do
 
   create_table "banks", force: true do |t|
     t.string   "bank_name"
@@ -125,6 +125,19 @@ ActiveRecord::Schema.define(version: 20140518124400) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "images", force: true do |t|
+    t.string   "title"
+    t.integer  "game_id"
+    t.string   "image_file_file_name"
+    t.string   "image_file_content_type"
+    t.integer  "image_file_file_size"
+    t.datetime "image_file_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "images", ["game_id"], name: "index_images_on_game_id"
 
   create_table "likes", force: true do |t|
     t.integer  "user_id"

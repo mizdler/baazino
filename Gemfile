@@ -47,6 +47,8 @@ gem 'sunspot_rails'
 gem 'sunspot_solr'
 
 gem "ckeditor"
+gem 'jquery-fileupload-rails'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
