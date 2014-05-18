@@ -82,8 +82,8 @@
 									<div  class="msg-time-chat">
 										<div href="#" class="message-img">
 											<%= link_to '#' do %>
-								          		<% if current_user.profile.avatar %>
-													<%= image_tag current_user.profile.avatar.url , class:"avatar"%>
+								          		<% if comment.user.profile.avatar %>
+													<%= image_tag comment.user.profile.avatar.url , class:"avatar"%>
 												<%else%>
 													<%image_tag 'empty_avatar.jpg' %>
 												<% end%>
@@ -93,10 +93,10 @@
 											<span class="arrow"></span>
 											<div class="text">
 												<p class="attribution">
-												<% if comment.user.profile != nil %>
+												<% if comment.user.profile%>
 													<%=comment.user.profile.firstname%>
 												<%end%>
-												<% if comment.user.profile != nil %>
+												<% if comment.user.profile%>
 													<%=comment.user.profile.lastname%>
 												<%end%>
 												 <%=comment.created_at%></p>
