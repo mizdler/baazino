@@ -1,4 +1,11 @@
 <%= stylesheet_link_tag    "comment", media: "all", "data-turbolinks-track" => true %>
+<link href="//localhost:3000/video-js.css" rel="stylesheet">
+<script src="//localhost:3000/video.js"></script>
+<script>
+  videojs.options.flash.swf = "localhost:3000/video-js.swf"
+</script>
+
+
 <div class = "col-lg-12" style="margin-top:20px;">
 	<div class="gameshow col-lg-l2">
 	  	<div class="detail col-lg-12">
@@ -33,7 +40,6 @@
 					</div>
 					<div class="line col-lg-8 col-lg-offset-2"></div>
 
-
 					<div class="col-lg-12">
 
 							<div class="col-lg-4 col-lg-offset-9">
@@ -65,6 +71,12 @@
 	        </div>
 
 		</div>
+
+
+		<video id="video_id" class="video-js vjs-default-skin vjs-big-play-centered"
+		  controls preload="auto" width="480" height="320"
+		 <source src="<%= @game.video.video_file.url%>" />
+		</video>
 
 		<div id ="comm" class="col-lg-12">
 			<div class="col-lg-12">
@@ -122,7 +134,6 @@
 				</div>
 			</div>
 		</div>
-
 
 				<div class="receptacle">
 			<div class="title">
