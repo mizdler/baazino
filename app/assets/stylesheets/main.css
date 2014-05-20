@@ -1,7 +1,10 @@
 body {
-	background-color: #54364a;
+	background-color: rgb(164, 2, 27);
 	background-size: cover;
 	font-family: Adobe Arabic;
+}
+#topbar{
+	background-color: black;
 }
 .menu {
 	list-style: none;
@@ -77,6 +80,10 @@ body {
 	float: right;
 }
 
+.videoGame{
+	float:left;
+	margin-left:60px;
+}
 .title .more {
 	float: left;
 	margin: 25px 40px;
@@ -144,6 +151,7 @@ body {
 	float: left;
 	color: green;
 	margin-left: 3px;
+	margin-top:170px
 }
 
 .priceMain {
