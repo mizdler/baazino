@@ -36,7 +36,7 @@ group :doc do
 end
 
 gem 'jquery-ui-rails'
-gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
+gem 'jquery-datatables-rails'
 
 gem 'ajaxful_rating', '~> 3.0.0.beta8'
 gem 'acts_as_votable', '~> 0.9.0'
