@@ -4,7 +4,9 @@ class Game < ActiveRecord::Base
   belongs_to :genre
   belongs_to :platform
   has_one :game_rate
+  has_one :video
   accepts_nested_attributes_for :review
+  accepts_nested_attributes_for :video
 
   acts_as_votable
   acts_as_commentable

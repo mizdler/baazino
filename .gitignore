@@ -15,4 +15,4 @@
 /log/*.log
 /tmp
 UML_MODEL.zargo~
-public
+public/system
